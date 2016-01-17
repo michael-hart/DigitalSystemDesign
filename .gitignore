@@ -30,3 +30,8 @@
 
 # Debug files
 *.dSYM/
+
+# Quartus II file metadata
+.metadata/*
+.qsys_edit/*
+db/*
