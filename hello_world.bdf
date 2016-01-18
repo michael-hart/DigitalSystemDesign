@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 360 224 536 240)
+	(rect 360 168 536 184)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
 	(text "oLEDG[7..0]" (rect 25 0 86 12)(font "Arial" ))
 	(pt 176 8)
@@ -52,7 +52,7 @@ applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
-	(annotation_block (location)(rect 192 224 256 344))
+	(annotation_block (location)(rect 192 168 256 288))
 )
 (pin
 	(output)
@@ -202,7 +202,7 @@ applicable agreement for further details.
 	(output)
 	(rect 344 456 536 472)
 	(text "OUTPUT" (rect 153 0 191 10)(font "Arial" (font_size 6)))
-	(text "oDRAM_DQM[1..0]" (rect 5 0 100 12)(font "Arial" ))
+	(text "oDRAM_DQM[1..0]" (rect 5 0 99 12)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 192 8)(pt 140 8))
@@ -234,4 +234,85 @@ applicable agreement for further details.
 	(flipy)
 	(text "VCC" (rect 160 7 180 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 280 400 344 416))
+)
+(symbol
+	(rect 768 64 1280 248)
+	(text "first_nios2_system" (rect 200 -1 328 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 168 25 180)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 224 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 141 84 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 224 152))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "led_pio_external_connection_export[7..0]" (rect 0 0 234 14)(font "Arial" (font_size 8)))
+		(text "led_pio_external_connection_export[7..0]" (rect 4 101 238 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 224 112)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 209 43 226 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 229 67 243 79)(font "Arial" (color 0 0 0)))
+		(text "led_pio_external_connection" (rect 60 83 246 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 107 259 119)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 195 123 228 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 229 147 265 159)(font "Arial" (color 0 0 0)))
+		(text " first_nios2_system " (rect 425 168 527 180)(font "Arial" ))
+		(line (pt 225 52)(pt 225 76))
+		(line (pt 226 52)(pt 226 76))
+		(line (pt 225 92)(pt 225 116))
+		(line (pt 226 92)(pt 226 116))
+		(line (pt 225 132)(pt 225 156))
+		(line (pt 226 132)(pt 226 156))
+		(line (pt 224 32)(pt 288 32))
+		(line (pt 288 32)(pt 288 168))
+		(line (pt 224 168)(pt 288 168))
+		(line (pt 224 32)(pt 224 168))
+		(line (pt 0 0)(pt 512 0))
+		(line (pt 512 0)(pt 512 184))
+		(line (pt 0 184)(pt 512 184))
+		(line (pt 0 0)(pt 0 184))
+	)
+)
+(symbol
+	(rect 584 48 616 64)
+	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 5 26 17)(font "Arial" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(connector
+	(pt 544 136)
+	(pt 768 136)
+)
+(connector
+	(pt 768 216)
+	(pt 600 216)
+)
+(connector
+	(pt 600 216)
+	(pt 600 64)
+)
+(connector
+	(pt 536 176)
+	(pt 768 176)
+	(bus)
 )
