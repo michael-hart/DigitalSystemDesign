@@ -25,7 +25,7 @@
 
 // ------------------------------------------
 // Generation parameters:
-//   output_name:         first_nios2_system_mm_interconnect_0_cmd_xbar_mux_001
+//   output_name:         first_nios2_system_mm_interconnect_0_cmd_xbar_mux_002
 //   NUM_INPUTS:          1
 //   ARBITRATION_SHARES:  1
 //   ARBITRATION_SCHEME   "round-robin"
@@ -35,7 +35,7 @@
 //   ST_CHANNEL_W:        6
 // ------------------------------------------
 
-module first_nios2_system_mm_interconnect_0_cmd_xbar_mux_001
+module first_nios2_system_mm_interconnect_0_cmd_xbar_mux_002
 (
     // ----------------------
     // Sinks

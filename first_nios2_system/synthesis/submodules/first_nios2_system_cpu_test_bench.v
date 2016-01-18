@@ -65,7 +65,7 @@ module first_nios2_system_cpu_test_bench (
   input   [ 31: 0] W_iw;
   input   [  5: 0] W_iw_op;
   input   [  5: 0] W_iw_opx;
-  input   [ 15: 0] W_pcb;
+  input   [ 16: 0] W_pcb;
   input            W_valid;
   input   [ 55: 0] W_vinst;
   input   [ 31: 0] W_wr_data;
@@ -75,12 +75,12 @@ module first_nios2_system_cpu_test_bench (
   input   [  3: 0] d_byteenable;
   input            d_read;
   input            d_write;
-  input   [ 15: 0] i_address;
+  input   [ 16: 0] i_address;
   input            i_read;
   input            i_readdatavalid;
   input            reset_n;
 
-  reg     [ 15: 0] M_target_pcb;
+  reg     [ 16: 0] M_target_pcb;
   wire    [ 31: 0] M_wr_data_filtered;
   wire             M_wr_data_unfiltered_0_is_x;
   wire             M_wr_data_unfiltered_10_is_x;
@@ -376,7 +376,7 @@ module first_nios2_system_cpu_test_bench (
       if (reset_n == 0)
           M_target_pcb <= 0;
       else if (M_en)
-          M_target_pcb <= E_src1[15 : 0];
+          M_target_pcb <= E_src1[16 : 0];
     end
 
 

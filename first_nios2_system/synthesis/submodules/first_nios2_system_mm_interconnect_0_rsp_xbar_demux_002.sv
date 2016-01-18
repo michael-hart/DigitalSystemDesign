@@ -27,7 +27,7 @@
 
 // ------------------------------------------
 // Generation parameters:
-//   output_name:         first_nios2_system_mm_interconnect_0_rsp_xbar_demux_001
+//   output_name:         first_nios2_system_mm_interconnect_0_rsp_xbar_demux_002
 //   ST_DATA_W:           93
 //   ST_CHANNEL_W:        6
 //   NUM_OUTPUTS:         1
@@ -40,7 +40,7 @@
 // 15610 - Warning: Design contains x input pin(s) that do not drive logic
 //------------------------------------------
 
-module first_nios2_system_mm_interconnect_0_rsp_xbar_demux_001
+module first_nios2_system_mm_interconnect_0_rsp_xbar_demux_002
 (
     // -------------------
     // Sink
