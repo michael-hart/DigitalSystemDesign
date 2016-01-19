@@ -73,14 +73,6 @@
          type = "int";
       }
    }
-   element onchip_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "32768";
-         type = "String";
-      }
-   }
    element sys_clk_timer.s1
    {
       datum baseAddress
@@ -94,6 +86,14 @@
       datum baseAddress
       {
          value = "69664";
+         type = "String";
+      }
+   }
+   element onchip_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "32768";
          type = "String";
       }
    }
@@ -134,7 +134,7 @@
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
-   name="pio_0_external_connection"
+   name="led_pio_external_connection"
    internal="led_pio.external_connection"
    type="conduit"
    dir="end" />
@@ -245,7 +245,7 @@
   <parameter name="mmu_tlbNumWays" value="16" />
   <parameter name="mmu_processIDNumBits" value="8" />
   <parameter name="impl" value="Small" />
-  <parameter name="icache_size" value="2048" />
+  <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_numTCIM" value="0" />
@@ -372,6 +372,14 @@
   <parameter name="baseAddress" value="0x00010800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="clock" version="13.1" start="clk_0.clk" end="cpu.clk" />
+ <connection kind="reset" version="13.1" start="clk_0.clk_reset" end="cpu.reset_n" />
+ <connection kind="clock" version="13.1" start="clk_0.clk" end="onchip_mem.clk1" />
+ <connection
+   kind="reset"
+   version="13.1"
+   start="clk_0.clk_reset"
+   end="onchip_mem.reset1" />
  <connection
    kind="avalon"
    version="13.1"
@@ -390,14 +398,7 @@
   <parameter name="baseAddress" value="0x8000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="reset" version="13.1" start="clk_0.clk_reset" end="cpu.reset_n" />
- <connection kind="clock" version="13.1" start="clk_0.clk" end="cpu.clk" />
  <connection kind="clock" version="13.1" start="clk_0.clk" end="jtag_uart.clk" />
- <connection
-   kind="reset"
-   version="13.1"
-   start="clk_0.clk_reset"
-   end="jtag_uart.reset" />
  <connection
    kind="avalon"
    version="13.1"
@@ -407,6 +408,11 @@
   <parameter name="baseAddress" value="0x00011038" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="reset"
+   version="13.1"
+   start="clk_0.clk_reset"
+   end="jtag_uart.reset" />
  <connection kind="clock" version="13.1" start="clk_0.clk" end="sys_clk_timer.clk" />
  <connection
    kind="reset"
@@ -454,12 +460,6 @@
    end="sys_clk_timer.irq">
   <parameter name="irqNumber" value="1" />
  </connection>
- <connection kind="clock" version="13.1" start="clk_0.clk" end="onchip_mem.clk1" />
- <connection
-   kind="reset"
-   version="13.1"
-   start="clk_0.clk_reset"
-   end="onchip_mem.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="false" />

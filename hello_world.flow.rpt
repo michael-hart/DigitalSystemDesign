@@ -1,5 +1,5 @@
 Flow report for hello_world
-Mon Jan 18 23:20:18 2016
+Tue Jan 19 12:11:01 2016
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Jan 18 23:20:13 2016      ;
+; Flow Status                        ; Successful - Tue Jan 19 12:10:55 2016      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; hello_world                                ;
 ; Top-level Entity Name              ; hello_world                                ;
@@ -48,12 +48,12 @@ applicable agreement for further details.
 ; Device                             ; EP3C16F484C6                               ;
 ; Timing Models                      ; Final                                      ;
 ; Total logic elements               ; 2,468 / 15,408 ( 16 % )                    ;
-;     Total combinational functions  ; 2,274 / 15,408 ( 15 % )                    ;
-;     Dedicated logic registers      ; 1,460 / 15,408 ( 9 % )                     ;
-; Total registers                    ; 1460                                       ;
+;     Total combinational functions  ; 2,273 / 15,408 ( 15 % )                    ;
+;     Dedicated logic registers      ; 1,461 / 15,408 ( 9 % )                     ;
+; Total registers                    ; 1461                                       ;
 ; Total pins                         ; 47 / 347 ( 14 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 192,384 / 516,096 ( 37 % )                 ;
+; Total memory bits                  ; 209,536 / 516,096 ( 41 % )                 ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/18/2016 23:19:36 ;
+; Start date & time ; 01/19/2016 12:10:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hello_world         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------------------------------+------------+
 ; Assignment Name                     ; Value                                                                ; Default Value ; Entity Name                                             ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 128454782669394.145315917605752                                      ; --            ; --                                                      ; --         ;
+; COMPILER_SIGNATURE_ID               ; 128454782669394.145320541803004                                      ; --            ; --                                                      ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_avalon_sc_fifo                                   ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_master_agent                              ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_master_translator                         ; --         ;
@@ -171,7 +171,7 @@ applicable agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                ; --            ; --                                                      ; --         ;
 ; SLD_FILE                            ; first_nios2_system/synthesis/first_nios2_system.regmap               ; --            ; --                                                      ; --         ;
 ; SLD_FILE                            ; first_nios2_system/synthesis/first_nios2_system.debuginfo            ; --            ; --                                                      ; --         ;
-; SLD_INFO                            ; QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1453159006 ; --            ; first_nios2_system                                      ; --         ;
+; SLD_INFO                            ; QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1453203800 ; --            ; first_nios2_system                                      ; --         ;
 ; SOPCINFO_FILE                       ; first_nios2_system/synthesis/../../first_nios2_system.sopcinfo       ; --            ; --                                                      ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                   ; --            ; --                                                      ; --         ;
 ; TIMEQUEST_DO_CCPP_REMOVAL           ; Off                                                                  ; On            ; --                                                      ; --         ;
@@ -184,11 +184,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 682 MB              ; 00:00:13                           ;
-; Fitter                    ; 00:00:17     ; 1.2                     ; 1482 MB             ; 00:00:22                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.1                     ; 678 MB              ; 00:00:13                           ;
+; Fitter                    ; 00:00:18     ; 1.2                     ; 1442 MB             ; 00:00:22                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 489 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 629 MB              ; 00:00:04                           ;
-; Total                     ; 00:00:36     ; --                      ; --                  ; 00:00:41                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 629 MB              ; 00:00:04                           ;
+; Total                     ; 00:00:39     ; --                      ; --                  ; 00:00:41                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

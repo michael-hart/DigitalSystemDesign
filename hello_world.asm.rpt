@@ -1,5 +1,5 @@
 Assembler report for hello_world
-Mon Jan 18 23:20:13 2016
+Tue Jan 19 12:10:55 2016
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jan 18 23:20:13 2016 ;
+; Assembler Status      ; Successful - Tue Jan 19 12:10:55 2016 ;
 ; Revision Name         ; hello_world                           ;
 ; Top-level Entity Name ; hello_world                           ;
 ; Family                ; Cyclone III                           ;
@@ -52,7 +52,6 @@ applicable agreement for further details.
 ; Option                                                                      ; Setting  ; Default Value ;
 +-----------------------------------------------------------------------------+----------+---------------+
 ; Use configuration device                                                    ; On       ; Off           ;
-; Enable OCT_DONE                                                             ; On       ; Off           ;
 ; Use smart compilation                                                       ; Off      ; Off           ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation  ; On       ; On            ;
 ; Enable compact report table                                                 ; Off      ; Off           ;
@@ -71,6 +70,7 @@ applicable agreement for further details.
 ; Hexadecimal Output File count direction                                     ; Up       ; Up            ;
 ; Release clears before tri-states                                            ; Off      ; Off           ;
 ; Auto-restart configuration after error                                      ; On       ; On            ;
+; Enable OCT_DONE                                                             ; Off      ; Off           ;
 ; Generate Serial Vector Format File (.svf) for Target Device                 ; Off      ; Off           ;
 ; Generate a JEDEC STAPL Format File (.jam) for Target Device                 ; Off      ; Off           ;
 ; Generate a compressed Jam STAPL Byte Code 2.0 File (.jbc) for Target Device ; Off      ; Off           ;
@@ -104,8 +104,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                          ;
 +----------------+------------------------------------------------------------------+
 ; Device         ; EP3C16F484C6                                                     ;
-; JTAG usercode  ; 0x002A3089                                                       ;
-; Checksum       ; 0x002A3089                                                       ;
+; JTAG usercode  ; 0x002A011D                                                       ;
+; Checksum       ; 0x002A011D                                                       ;
 +----------------+------------------------------------------------------------------+
 
 
@@ -115,7 +115,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jan 18 23:20:11 2016
+    Info: Processing started: Tue Jan 19 12:10:53 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off hello_world -c hello_world
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
@@ -123,7 +123,7 @@ Info (115017): Design contains a time-limited core -- only a single, time-limite
 Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 497 megabytes
-    Info: Processing ended: Mon Jan 18 23:20:13 2016
+    Info: Processing ended: Tue Jan 19 12:10:55 2016
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
