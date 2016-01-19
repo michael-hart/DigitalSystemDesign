@@ -68,4 +68,19 @@ int main()
 	exec_t2 = times(NULL); // get system time after finishing the process
 
 	gcvt((exec_t2 - exec_t1), 10, buf);
+
+	alt_putstr(" proc time = "); alt_putstr(buf); alt_putstr(" ticks \n");
+	// printf could be used if there was enough memory
+
+	int i;
+	for (i=0; i<10; i++)
+	{
+		y = y/2.0;
+	}
+
+	gcvt(((int) y), 10, buf);
+	alt_putstr(" Result (divided by 1014) = "); alt_putstr(buf);
+	// printf could be used if there was enough memory
+
+	return 0;
 }
