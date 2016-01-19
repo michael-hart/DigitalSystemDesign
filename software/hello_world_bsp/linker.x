@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: D:/DSD/DigitalSystemDesign/first_nios2_system.sopcinfo
  *
- * Generated: Tue Jan 19 12:12:57 GMT 2016
+ * Generated: Tue Jan 19 13:10:28 GMT 2016
  */
 
 /*
@@ -50,12 +50,12 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x8000, LENGTH = 32
-    onchip_mem : ORIGIN = 0x8020, LENGTH = 20448
+    reset : ORIGIN = 0x10000, LENGTH = 32
+    onchip_mem : ORIGIN = 0x10020, LENGTH = 39552
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_onchip_mem = 0x8000;
+__alt_mem_onchip_mem = 0x10000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -367,7 +367,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xd000;
+__alt_data_end = 0x19aa0;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -383,4 +383,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xd000 );
+PROVIDE( __alt_heap_limit    = 0x19aa0 );

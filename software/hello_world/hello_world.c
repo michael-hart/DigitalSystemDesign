@@ -15,12 +15,12 @@
 #include <unistd.h>
 
 // Test case 1
-//#define step 5
-//#define N 52
+#define step 5
+#define N 52
 
 // Test case 2
-#define step 0.1
-#define N 2551
+//#define step 0.1
+//#define N 2551
 
 //Test case 3
 //#define step 0.001
@@ -40,12 +40,20 @@ void generateVector(float x[N])
 
 float sumVector(float x[], int M)
 {
-	// YOUR CODE GOES HERE
+	float y=0, current;
+	int i;
+	for (i=0; i<M; i++)
+	{
+		current = x[i];
+		y += current + current*current;
+	}
+	return y;
 }
 
 int main()
 {
-	printf("Task 2!\n");
+	//printf("Task 1!\n");
+//	alt_printf("Task 1!\n");
 
 	// Define input vector
 	float x[N];
@@ -56,7 +64,7 @@ int main()
 	generateVector(x);
 
 	// The following is used for timing
-	char buf[50];
+	char buf[20];
 	clock_t exec_t1, exec_t2;
 
 	exec_t1 = times(NULL); // get system time before starting the process
