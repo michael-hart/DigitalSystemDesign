@@ -36,3 +36,9 @@
 .qsys_edit/*
 db/*
 incremental_db/*
+
+# .d built files from Nios II
+*.d
+
+# Ignore eclipse workspace files
+NiosSource/*
