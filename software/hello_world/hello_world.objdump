@@ -33,49 +33,49 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   7 .debug_aranges 00000b58  00000000  00000000  0000a150  2**3
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_info   00014e9e  00000000  00000000  0000aca8  2**0
+  8 .debug_info   00014eaa  00000000  00000000  0000aca8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_abbrev 00007125  00000000  00000000  0001fb46  2**0
+  9 .debug_abbrev 00007125  00000000  00000000  0001fb52  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_line   00006d2e  00000000  00000000  00026c6b  2**0
+ 10 .debug_line   00006c9e  00000000  00000000  00026c77  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_frame  0000137c  00000000  00000000  0002d99c  2**2
+ 11 .debug_frame  0000137c  00000000  00000000  0002d918  2**2
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_str    00002264  00000000  00000000  0002ed18  2**0
+ 12 .debug_str    0000226c  00000000  00000000  0002ec94  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_loc    0000ba0e  00000000  00000000  00030f7c  2**0
+ 13 .debug_loc    0000ba0e  00000000  00000000  00030f00  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_alt_sim_info 00000020  00000000  00000000  0003c98c  2**2
+ 14 .debug_alt_sim_info 00000020  00000000  00000000  0003c910  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 000006f0  00000000  00000000  0003c9b0  2**3
+ 15 .debug_ranges 000006f0  00000000  00000000  0003c930  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .thread_model 00000003  00000000  00000000  0003f77c  2**0
+ 16 .thread_model 00000003  00000000  00000000  0003f6fc  2**0
                   CONTENTS, READONLY
- 17 .cpu          00000003  00000000  00000000  0003f77f  2**0
+ 17 .cpu          00000003  00000000  00000000  0003f6ff  2**0
                   CONTENTS, READONLY
- 18 .qsys         00000001  00000000  00000000  0003f782  2**0
+ 18 .qsys         00000001  00000000  00000000  0003f702  2**0
                   CONTENTS, READONLY
- 19 .simulation_enabled 00000001  00000000  00000000  0003f783  2**0
+ 19 .simulation_enabled 00000001  00000000  00000000  0003f703  2**0
                   CONTENTS, READONLY
- 20 .sysid_hash   00000004  00000000  00000000  0003f784  2**0
+ 20 .sysid_hash   00000004  00000000  00000000  0003f704  2**0
                   CONTENTS, READONLY
- 21 .sysid_base   00000004  00000000  00000000  0003f788  2**0
+ 21 .sysid_base   00000004  00000000  00000000  0003f708  2**0
                   CONTENTS, READONLY
- 22 .sysid_time   00000004  00000000  00000000  0003f78c  2**0
+ 22 .sysid_time   00000004  00000000  00000000  0003f70c  2**0
                   CONTENTS, READONLY
- 23 .stderr_dev   00000009  00000000  00000000  0003f790  2**0
+ 23 .stderr_dev   00000009  00000000  00000000  0003f710  2**0
                   CONTENTS, READONLY
- 24 .stdin_dev    00000009  00000000  00000000  0003f799  2**0
+ 24 .stdin_dev    00000009  00000000  00000000  0003f719  2**0
                   CONTENTS, READONLY
- 25 .stdout_dev   00000009  00000000  00000000  0003f7a2  2**0
+ 25 .stdout_dev   00000009  00000000  00000000  0003f722  2**0
                   CONTENTS, READONLY
- 26 .sopc_system_name 00000012  00000000  00000000  0003f7ab  2**0
+ 26 .sopc_system_name 00000012  00000000  00000000  0003f72b  2**0
                   CONTENTS, READONLY
- 27 .quartus_project_dir 0000001a  00000000  00000000  0003f7bd  2**0
+ 27 .quartus_project_dir 0000001e  00000000  00000000  0003f73d  2**0
                   CONTENTS, READONLY
- 28 .jdi          0000568f  00000000  00000000  0003f7d7  2**0
+ 28 .jdi          0000568f  00000000  00000000  0003f75b  2**0
                   CONTENTS, READONLY
- 29 .sopcinfo     000368b5  00000000  00000000  00044e66  2**0
+ 29 .sopcinfo     000368b5  00000000  00000000  00044dea  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00010000 l    d  .entry	00000000 .entry
@@ -285,7 +285,7 @@ SYMBOL TABLE:
 00016a34 g     F .text	00000008 __umodsi3
 00019970 g       *ABS*	00000000 end
 00010e2c g     F .text	0000012c __pack_f
-00019aa0 g       *ABS*	00000000 __alt_stack_pointer
+00019c40 g       *ABS*	00000000 __alt_stack_pointer
 00011ce4 g     F .text	00000318 _dcvt
 000172e4 g     F .text	00000088 alt_avalon_timer_sc_init
 00010d80 g     F .text	000000ac __clzsi2
@@ -330,7 +330,7 @@ SYMBOL TABLE:
 00019820 g     O .bss	00000004 __malloc_max_total_mem
 00017084 g     F .text	00000060 altera_avalon_jtag_uart_write_fd
 00011878 g     F .text	00000144 ecvtbuf
-00019aa0 g       *ABS*	00000000 __alt_heap_limit
+00019c40 g       *ABS*	00000000 __alt_heap_limit
 000139ec g     F .text	00001638 _dtoa_r
 00015458 g     F .text	00000784 _malloc_r
 0001911c g     O .rwdata	00000004 alt_errno
@@ -364,7 +364,7 @@ SYMBOL TABLE:
 000181e8 g     F .text	00000020 exit
 00012a1c g     F .text	000001a8 __mdiff
 000169d0 g     F .text	0000005c __modsi3
-00019aa0 g       *ABS*	00000000 __alt_data_end
+00019c40 g       *ABS*	00000000 __alt_data_end
 00010020 g     F .exceptions	00000000 alt_exception
 000113e4 g     F .text	000000a8 gcvt
 000185f8 g     F .text	0000003c _exit
@@ -419,7 +419,7 @@ Disassembly of section .entry:
    10014:	08406e14 	ori	at,at,440
     jmp r1
    10018:	0800683a 	jmp	at
-   1001c:	00000000 	call	0 <__reset-0x10000>
+   1001c:	00000000 	call	0 <__alt_mem_onchip_mem-0x10000>
 
 Disassembly of section .exceptions:
 
@@ -734,7 +734,7 @@ Disassembly of section .text:
     movhi sp, %hi(__alt_stack_pointer)
    101b8:	06c00074 	movhi	sp,1
     ori sp, sp, %lo(__alt_stack_pointer)
-   101bc:	dee6a814 	ori	sp,sp,39584
+   101bc:	dee71014 	ori	sp,sp,40000
     movhi gp, %hi(_gp)
    101c0:	068000b4 	movhi	gp,2
     ori gp, gp, %lo(_gp)
@@ -8131,7 +8131,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
    16e30:	e0bfff17 	ldw	r2,-4(fp)
    16e34:	1885883a 	add	r2,r3,r2
    16e38:	00c000b4 	movhi	r3,2
-   16e3c:	18e6a804 	addi	r3,r3,-25952
+   16e3c:	18e71004 	addi	r3,r3,-25536
    16e40:	1880062e 	bgeu	r3,r2,16e5c <sbrk+0x74>
    16e44:	e0bffa17 	ldw	r2,-24(fp)
    16e48:	e0bffd15 	stw	r2,-12(fp)

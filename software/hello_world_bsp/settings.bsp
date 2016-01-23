@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>19-Jan-2016 13:10:28</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1453209028471</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>D:\DSD\DigitalSystemDesign\software\hello_world_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>19-Jan-2016 16:12:19</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1453219939763</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Patrick\Documents\DSD\software\hello_world_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>D:\DSD\DigitalSystemDesign\first_nios2_system.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>..\..\first_nios2_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -864,8 +864,8 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>onchip_mem</slaveDescriptor>
-                <addressRange>0x00010000 - 0x00019A9F</addressRange>
-                <addressSpan>39584</addressSpan>
+                <addressRange>0x00010000 - 0x00019C3F</addressRange>
+                <addressSpan>40000</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>

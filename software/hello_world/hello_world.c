@@ -18,6 +18,7 @@
 #define step 5
 #define N 52
 
+
 // Test case 2
 //#define step 0.1
 //#define N 2551
