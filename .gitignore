@@ -42,3 +42,6 @@ incremental_db/*
 
 # Ignore eclipse workspace files
 NiosSource/*
+
+# Ignore reports of generated files
+*.rpt
