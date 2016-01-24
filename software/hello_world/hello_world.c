@@ -14,10 +14,11 @@
 #include <system.h>
 #include <unistd.h>
 
+// Comment and uncomment to perform each test case; ensure to recompile each time
+
 // Test case 1
 #define step 5
 #define N 52
-
 
 // Test case 2
 //#define step 0.1
@@ -27,18 +28,18 @@
 //#define step 0.001
 //#define N 255001
 
-
 // Generates the vector x and stores it in memory
 void generateVector(float x[N])
 {
 	int i;
 	x[0] = 0;
-	for (i=0; i<N; i++)
+	for (i=1; i<N; i++)
 	{
 		x[i] = x[i-1] + step;
 	}
 }
 
+// Sums along the vector, with each element x -> x + x^2
 float sumVector(float x[], int M)
 {
 	float y=0, current;
@@ -53,8 +54,8 @@ float sumVector(float x[], int M)
 
 int main()
 {
-	//printf("Task 1!\n");
-//	alt_printf("Task 1!\n");
+	// Modify this line for each task in turn
+	alt_putstr("Task 1!\n");
 
 	// Define input vector
 	float x[N];

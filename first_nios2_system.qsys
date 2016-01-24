@@ -159,7 +159,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="40000" />
+  <parameter name="memorySize" value="40500" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
   <parameter name="simMemInitOnlyFilename" value="0" />
@@ -284,8 +284,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x10000' end='0x19C40' /><slave name='cpu.jtag_debug_module' start='0x20800' end='0x21000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x10000' end='0x19C40' /><slave name='cpu.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='sys_clk_timer.s1' start='0x21000' end='0x21020' /><slave name='led_pio.s1' start='0x21020' end='0x21030' /><slave name='sysid.control_slave' start='0x21030' end='0x21038' /><slave name='jtag_uart.avalon_jtag_slave' start='0x21038' end='0x21040' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x10000' end='0x19E34' /><slave name='cpu.jtag_debug_module' start='0x20800' end='0x21000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x10000' end='0x19E34' /><slave name='cpu.jtag_debug_module' start='0x20800' end='0x21000' /><slave name='sys_clk_timer.s1' start='0x21000' end='0x21020' /><slave name='led_pio.s1' start='0x21020' end='0x21030' /><slave name='sysid.control_slave' start='0x21030' end='0x21038' /><slave name='jtag_uart.avalon_jtag_slave' start='0x21038' end='0x21040' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone III" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
