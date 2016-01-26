@@ -7,7 +7,7 @@
 <td width="20%" bgcolor="#77BBFF">BSP Type:</td><td>hal</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>..\..\first_nios2_system.sopcinfo</td>
+<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>D:\DSD\DigitalSystemDesign\first_nios2_system.sopcinfo</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">Quartus JDI File:</td><td>default</td>
@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>24-Jan-2016 18:34:07</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>26-Jan-2016 13:00:44</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1453660447444</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1453813244328</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>D:\DSD\DigitalSystemDesign\software\hello_world_bsp</td>
@@ -38,19 +38,22 @@
 <th align="left" width="20%">Slave Descriptor</th><th align="left" width="40%">Address Range</th><th align="left" width="20%">Size</th><th align="left" width="20%">Attributes</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>jtag_uart</td><td>0x00021038 - 0x0002103F</td><td>8</td><td class="listing">printable</td>
+<td>jtag_uart</td><td>0x01021038 - 0x0102103F</td><td>8</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sysid</td><td>0x00021030 - 0x00021037</td><td>8</td><td class="listing">&nbsp;</td>
+<td>sysid</td><td>0x01021030 - 0x01021037</td><td>8</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>led_pio</td><td>0x00021020 - 0x0002102F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>led_pio</td><td>0x01021020 - 0x0102102F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>sys_clk_timer</td><td>0x00021000 - 0x0002101F</td><td>32</td><td class="listing">timer</td>
+<td>sys_clk_timer</td><td>0x01021000 - 0x0102101F</td><td>32</td><td class="listing">timer</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>onchip_mem</td><td>0x00010000 - 0x00019E33</td><td>40500</td><td class="listing">memory</td>
+<td>onchip_mem</td><td>0x01010000 - 0x01019E33</td><td>40500</td><td class="listing">memory</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>sdram</td><td>0x00800000 - 0x00FFFFFF</td><td>8388608</td><td class="listing">memory</td>
 </tr>
 </table>
 <br>
@@ -69,22 +72,22 @@
 <th align="left" width="50%">Section</th><th align="left" width="50%">Region</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.text</td><td>onchip_mem</td>
+<td>.text</td><td>sdram</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rodata</td><td>onchip_mem</td>
+<td>.rodata</td><td>sdram</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.rwdata</td><td>onchip_mem</td>
+<td>.rwdata</td><td>sdram</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.bss</td><td>onchip_mem</td>
+<td>.bss</td><td>sdram</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.heap</td><td>onchip_mem</td>
+<td>.heap</td><td>sdram</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>.stack</td><td>onchip_mem</td>
+<td>.stack</td><td>sdram</td>
 </tr>
 </table>
 <h3>Settings</h3>
@@ -180,7 +183,7 @@
 <td width="20%">Default Value:</td><td>1</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>0</td>
+<td width="20%">Value:</td><td>1</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -693,7 +696,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_mem</td>
+<td width="20%">Value:</td><td>sdram</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -747,7 +750,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>onchip_mem</td>
+<td width="20%">Value:</td><td>sdram</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

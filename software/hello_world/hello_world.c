@@ -17,16 +17,19 @@
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
 // Test case 1
-#define step 5
-#define N 52
+//#define TASK 1
+//#define step 5
+//#define N 52
 
 // Test case 2
+//#define TASK 2
 //#define step 0.1
 //#define N 2551
 
 //Test case 3
-//#define step 0.001
-//#define N 255001
+#define TASK 3
+#define step 0.001
+#define N 255001
 
 // Generates the vector x and stores it in memory
 void generateVector(float x[N])
@@ -54,43 +57,31 @@ float sumVector(float x[], int M)
 
 int main()
 {
-	// Modify this line for each task in turn
-	alt_putstr("Task 1!\n");
-
 	// Define input vector
 	float x[N];
 
 	// Returned result
 	float y;
 
-	generateVector(x);
-
 	// The following is used for timing
-	char buf[20];
 	clock_t exec_t1, exec_t2;
+
+	// Modify this line for each task in turn
+	printf("Task %d!\n", (int)TASK);
+
+	generateVector(x);
 
 	exec_t1 = times(NULL); // get system time before starting the process
 
-// The code that you want to time goes here
+	// The code that you want to time goes here
 	y = sumVector(x, N);
 
 	// till here
 	exec_t2 = times(NULL); // get system time after finishing the process
 
-	gcvt((exec_t2 - exec_t1), 10, buf);
-
-	alt_putstr(" proc time = "); alt_putstr(buf); alt_putstr(" ticks \n");
-	// printf could be used if there was enough memory
-
-	int i;
-	for (i=0; i<10; i++)
-	{
-		y = y/2.0;
-	}
-
-	gcvt(((int) y), 10, buf);
-	alt_putstr(" Result (divided by 1014) = "); alt_putstr(buf);
-	// printf could be used if there was enough memory
+	// Print output to stdout
+	printf("Procedure time = %d ticks\n", (int)(exec_t2 - exec_t1));
+	printf("Result = %f\n", y);
 
 	return 0;
 }

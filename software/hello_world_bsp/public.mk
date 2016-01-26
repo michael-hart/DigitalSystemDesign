@@ -87,11 +87,11 @@ ACDS_VERSION := 13.1
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
-JDI_FILE := $(ABS_BSP_ROOT_DIR)/../../hello_world.jdi
+JDI_FILE := D:/DSD/DigitalSystemDesign/hello_world.jdi
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := $(ABS_BSP_ROOT_DIR)/../../first_nios2_system.sopcinfo
+SOPCINFO_FILE := D:/DSD/DigitalSystemDesign/first_nios2_system.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -151,14 +151,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x21030
-SOPC_SYSID_FLAG += --sidp=0x21030
-ELF_PATCH_FLAG  += --sidp 0x21030
+# setting SOPC_SYSID_BASE_ADDRESS is 0x1021030
+SOPC_SYSID_FLAG += --sidp=0x1021030
+ELF_PATCH_FLAG  += --sidp 0x1021030
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1453660413
-SOPC_SYSID_FLAG += --timestamp=1453660413
-ELF_PATCH_FLAG  += --timestamp 1453660413
+# setting SOPC_TIMESTAMP is 1453761516
+SOPC_SYSID_FLAG += --timestamp=1453761516
+ELF_PATCH_FLAG  += --timestamp 1453761516
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 
@@ -177,8 +177,7 @@ ELF_PATCH_FLAG  += --timestamp 1453660413
 # multiple inheritance and exceptions are not supported. If false, adds 
 # -DALT_NO_C_PLUS_PLUS to ALT_CPPFLAGS in public.mk, and reduces code 
 # footprint. none 
-# setting hal.enable_c_plus_plus is 0
-ALT_CPPFLAGS += -DALT_NO_C_PLUS_PLUS
+# setting hal.enable_c_plus_plus is 1
 
 # When your application exits, close file descriptors, call C++ destructors, 
 # etc. Code footprint can be reduced by disabling clean exit. If disabled, adds 

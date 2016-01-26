@@ -76,11 +76,11 @@
          type = "int";
       }
    }
-   element sys_clk_timer.s1
+   element led_pio.s1
    {
       datum baseAddress
       {
-         value = "16912384";
+         value = "16912416";
          type = "String";
       }
    }
@@ -92,11 +92,11 @@
          type = "String";
       }
    }
-   element led_pio.s1
+   element sys_clk_timer.s1
    {
       datum baseAddress
       {
-         value = "16912416";
+         value = "16912384";
          type = "String";
       }
    }
