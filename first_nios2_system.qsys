@@ -76,14 +76,6 @@
          type = "int";
       }
    }
-   element led_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "16912416";
-         type = "String";
-      }
-   }
    element onchip_mem.s1
    {
       datum baseAddress
@@ -97,6 +89,14 @@
       datum baseAddress
       {
          value = "16912384";
+         type = "String";
+      }
+   }
+   element led_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "16912416";
          type = "String";
       }
    }
@@ -256,7 +256,7 @@
   <parameter name="setting_interruptControllerType" value="Internal" />
   <parameter name="setting_branchPredictionType" value="Automatic" />
   <parameter name="setting_bhtPtrSz" value="8" />
-  <parameter name="muldiv_multiplierType" value="NoneSmall" />
+  <parameter name="muldiv_multiplierType" value="EmbeddedMulFast" />
   <parameter name="mpu_minInstRegionSize" value="12" />
   <parameter name="mpu_minDataRegionSize" value="12" />
   <parameter name="mmu_uitlbNumEntries" value="4" />
