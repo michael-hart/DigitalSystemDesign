@@ -82,7 +82,7 @@ float sumVector(float x[], int M)
 {
 	float y=0, current;
 	int i;
-	for (i=0; i<M; i++)
+	for (i=1; i<M+1; i++)
 	{
 		current = x[i];
 		y += 0.5*current + current*current*cos(floor(current/4.0)-32.0);
