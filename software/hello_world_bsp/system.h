@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
- * SOPC Builder design path: D:/DSD/DigitalSystemDesign/first_nios2_system.sopcinfo
+ * SOPC Builder design path: ../../first_nios2_system.sopcinfo
  *
- * Generated: Tue Jan 26 13:20:52 GMT 2016
+ * Generated: Thu Feb 11 13:40:40 GMT 2016
  */
 
 /*

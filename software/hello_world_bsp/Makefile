@@ -103,7 +103,7 @@ ACDS_VERSION := 13.1
 # BUILD_NUMBER: 162
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := D:/DSD/DigitalSystemDesign/first_nios2_system.sopcinfo
+SOPC_FILE := ../../first_nios2_system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
