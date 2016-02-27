@@ -9,6 +9,7 @@
 #include <ctime>
 #include <iostream>
 #include <cmath>
+#include "../hello_world_custom_instr_bsp/system.h"
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
@@ -81,11 +82,19 @@ void generateVector(float x[N])
 float sumVector(float x[], int M)
 {
 	float y=0, current;
+	float x2, halfx, quarterx, qx_offset, cos_out, rightsum, sum;
 	int i;
 	for (i=1; i<M+1; i++)
 	{
 		current = x[i];
-		y += 0.5*current + current*current*cos(floor(current/4.0)-32.0);
+		halfx = ALT_CI_FP_MULT_0(3, current, 2); // x/2
+		quarterx = ALT_CI_FP_MULT_0(3, current, 4); // x/4
+		qx_offset = ALT_CI_FP_MULT_0(1, floor(quarterx), 32.0); // floor(x/4) - 32
+		cos_out = cos(qx_offset); // cos(floor(x/4) - 32)
+		x2 = ALT_CI_FP_MULT_0(2, current, current);
+		rightsum = ALT_CI_FP_MULT_0(2, x2, cos_out);// x^2 * cos(floor(x/4) - 32)
+		sum = ALT_CI_FP_MULT_0(0, rightsum, halfx); // 0.5*x + x^2 * cos(floor(x/4) - 32)
+		y =  ALT_CI_FP_MULT_0(0, y, sum); // Sum over vector
 	}
 	return y;
 }
