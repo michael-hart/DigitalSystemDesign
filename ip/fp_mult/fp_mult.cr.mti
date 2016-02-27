@@ -1,0 +1,158 @@
+D:/DSD/DigitalSystemDesign/fp_mult/downloaded/env_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/env_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package ENV
+-- Loading package standard_additions
+-- Compiling package body ENV
+-- Loading package ENV
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_synth.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_synth.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Loading package MATH_REAL
+-- Compiling entity float_synth
+-- Compiling architecture rtl of float_synth
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_additions.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_additions.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package numeric_std_additions
+-- Compiling package body numeric_std_additions
+-- Loading package numeric_std_additions
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_additions.vhdl(491): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_additions.vhdl(492): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_additions.vhdl(2093): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_unsigned_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/numeric_std_unsigned_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package NUMERIC_STD_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package numeric_std_additions
+-- Compiling package body NUMERIC_STD_UNSIGNED
+-- Loading package NUMERIC_STD_UNSIGNED
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_fixed_synth.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_fixed_synth.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity test_fixed_synth
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Compiling architecture testbench of test_fixed_synth
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_synth.vhdl {1 {vcom -work ieee_proposed -93 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_synth.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Compiling entity fixed_synth
+-- Compiling architecture rtl of fixed_synth
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Compiling package float_pkg
+-- Compiling package body float_pkg
+-- Loading package float_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_pkg_c.vhdl(1021): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_pkg_c.vhdl(1022): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/float_pkg_c.vhdl(6187): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_additions_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_additions_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package standard_additions
+-- Loading package TEXTIO
+-- Compiling package body standard_additions
+-- Loading package standard_additions
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package fixed_float_types
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Compiling package fixed_pkg
+-- Loading package MATH_REAL
+-- Compiling package body fixed_pkg
+-- Loading package fixed_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl(1470): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl(1471): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl(1472): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl(6888): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Compiling package standard_textio_additions
+-- Loading package standard_additions
+-- Compiling package body standard_textio_additions
+-- Loading package standard_textio_additions
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl(60): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package std_logic_1164_additions
+-- Compiling package body std_logic_1164_additions
+-- Loading package std_logic_1164_additions
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl(1082): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_float_synth.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_float_synth.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity test_float_synth
+-- Loading package TEXTIO
+-- Loading package MATH_REAL
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Compiling architecture testbench of test_float_synth
+-- Loading entity float_synth
+
+} {} {}}
