@@ -9,7 +9,6 @@
 #include <ctime>
 #include <iostream>
 #include <cmath>
-#include <system.h>
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
@@ -86,7 +85,7 @@ float sumVector(float x[], int M)
 	for (i=1; i<M+1; i++)
 	{
 		current = x[i];
-		y += ALT_CI_FP_MULT_0(0.5,current) + ALT_CI_FP_MULT_0(ALT_CI_FP_MULT_0(current,current),cos(floor(current/4.0)-32.0));
+		y += 0.5*current + current*current*cos(floor(current/4.0)-32.0);
 	}
 	return y;
 }

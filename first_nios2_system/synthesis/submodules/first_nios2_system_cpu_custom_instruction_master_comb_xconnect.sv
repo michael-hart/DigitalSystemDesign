@@ -80,7 +80,7 @@ module first_nios2_system_cpu_custom_instruction_master_comb_xconnect
     // Figure out which output is selected, and use that to
     // gate control signals
     // -------------------------------------------------------
-    assign select0 = ci_slave_n >= 0 && ci_slave_n < 1;
+    assign select0 = ci_slave_n >= 0 && ci_slave_n < 4;
 
     assign ci_master0_readra  = (select0 && ci_slave_readra);
     assign ci_master0_readrb  = (select0 && ci_slave_readrb);
