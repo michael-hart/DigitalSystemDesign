@@ -9,23 +9,24 @@
 #include <ctime>
 #include <iostream>
 #include <cmath>
+#include <system.h>
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
-// Test case 1
-//#define TASK 1
-//#define step 5
-//#define N 52
+// Test case 1 - correct is 57879.872973
+#define TASK 1
+#define step 5
+#define N 52
 
-// Test case 2
+// Test case 2 - correct is -76973.390625 (for single)
 //#define TASK 2
 //#define step 0.1
 //#define N 2551
 
-//Test case 3
-#define TASK 3
-#define step 0.001
-#define N 255001
+//Test case 3 - correct is 37022532
+//#define TASK 3
+//#define step 0.001
+//#define N 255001
 
 void generateVector(float x[N]);
 float sumVector(float x[], int M);
@@ -34,6 +35,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+
 	// Define input vector
 	float x[N];
 
@@ -81,11 +83,19 @@ void generateVector(float x[N])
 float sumVector(float x[], int M)
 {
 	float y=0, current;
+	float x2, halfx, quarterx, qx_offset, cos_out, rightsum, sum;
 	int i;
 	for (i=1; i<M+1; i++)
 	{
 		current = x[i];
-		y += 0.5*current + current*current*cos(floor(current/4.0)-32.0);
+		halfx = ALT_CI_FP_MULT_0(0b11, current, 2.0); // x/2
+		quarterx = ALT_CI_FP_MULT_0(0b11, current, 4.0); // x/4
+		qx_offset = ALT_CI_FP_MULT_0(0b01, floor(quarterx), 32.0); // floor(x/4) - 32
+		cos_out = cos(qx_offset); // cos(floor(x/4) - 32)
+		x2 = ALT_CI_FP_MULT_0(0b10, current, current);
+		rightsum = ALT_CI_FP_MULT_0(0b10, x2, cos_out);// x^2 * cos(floor(x/4) - 32)
+		sum = ALT_CI_FP_MULT_0(0b00, rightsum, halfx); // 0.5*x + x^2 * cos(floor(x/4) - 32)
+		y =  ALT_CI_FP_MULT_0(0b00, y, sum); // Sum over vector
 	}
 	return y;
 }
