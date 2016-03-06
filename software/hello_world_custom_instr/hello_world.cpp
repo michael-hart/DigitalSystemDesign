@@ -13,12 +13,13 @@
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
-// Test case 1 - correct is 57879.872973
+// Test case 1 - correct is 57879.867188
 #define TASK 1
 #define step 5
-#define N 52
+//#define N 52
+#define N 5
 
-// Test case 2 - correct is -76973.390625 (for single)
+// Test case 2 - correct is -76973.390625
 //#define TASK 2
 //#define step 0.1
 //#define N 2551
@@ -35,7 +36,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-
 	// Define input vector
 	float x[N];
 
@@ -45,25 +45,50 @@ int main(int argc, char **argv)
 	// The following is used for timing
 	clock_t exec_t1, exec_t2;
 
+	cout << "Hello, NIOS" << endl;
+	int fails = 0, passes = 0;
+	bool pass;
+	float expected, actual, input;
+	for (int i = 0; i < 256; i++)
+	{
+		expected = floor(i/4.0) - 32;
+		input = (float)i;
+		actual = ALT_CI_FP_MULT_0(input);
+		pass = expected == actual;
+
+		cout << "Result for " << i << " is " << actual << " and should be " << expected << (pass ? " PASS " : " *** FAIL ***") << endl;
+		if (!pass)
+		{
+			fails++;
+		}
+		else
+		{
+			passes++;
+		}
+	}
+	cout << "Number of fails is " << fails << endl;
+	cout << "Number of passes is " << passes << endl;
+//	cout << "Result for 200 is " << ALT_CI_FP_MULT_0(200.0) << endl;
+
 	// Modify this line for each task in turn
-	cout << "Task " << TASK << endl;
-
-	generateVector(x);
-
-	cout << "Vector generated" << endl;
-
-	exec_t1 = clock(); // get system time before starting the process
-
-	// The code that you want to time goes here
-	y = sumVector(x, N);
-
-	// till here
-	exec_t2 = clock(); // get system time after finishing the process
-
-	// Print output to stdout
-	cout << fixed; // Set output to fixed decimal place
-	cout << "Procedure time = " << exec_t2 - exec_t1 << " ticks" << endl;
-	cout << "Result = " << y << endl;
+//	cout << "Task " << TASK << endl;
+//
+//	generateVector(x);
+//
+//	cout << "Vector generated" << endl;
+//
+//	exec_t1 = clock(); // get system time before starting the process
+//
+//	// The code that you want to time goes here
+//	y = sumVector(x, N);
+//
+//	// till here
+//	exec_t2 = clock(); // get system time after finishing the process
+//
+//	// Print output to stdout
+//	cout << fixed; // Set output to fixed decimal place
+//	cout << "Procedure time = " << exec_t2 - exec_t1 << " ticks" << endl;
+//	cout << "Result = " << y << endl;
 
 	return 0;
 }
@@ -82,20 +107,15 @@ void generateVector(float x[N])
 // Sums along the vector, with each element x -> x + x^2
 float sumVector(float x[], int M)
 {
-	float y=0, current;
-	float x2, halfx, quarterx, qx_offset, cos_out, rightsum, sum;
+	float y=0, current, y2 = 0;
+//	float x2, halfx, quarterx, qx_offset, cos_out, rightsum, sum;
 	int i;
-	for (i=1; i<M+1; i++)
+	for (i=1; i<M; i++)
 	{
 		current = x[i];
-		halfx = ALT_CI_FP_MULT_0(0b11, current, 2.0); // x/2
-		quarterx = ALT_CI_FP_MULT_0(0b11, current, 4.0); // x/4
-		qx_offset = ALT_CI_FP_MULT_0(0b01, floor(quarterx), 32.0); // floor(x/4) - 32
-		cos_out = cos(qx_offset); // cos(floor(x/4) - 32)
-		x2 = ALT_CI_FP_MULT_0(0b10, current, current);
-		rightsum = ALT_CI_FP_MULT_0(0b10, x2, cos_out);// x^2 * cos(floor(x/4) - 32)
-		sum = ALT_CI_FP_MULT_0(0b00, rightsum, halfx); // 0.5*x + x^2 * cos(floor(x/4) - 32)
-		y =  ALT_CI_FP_MULT_0(0b00, y, sum); // Sum over vector
+//		y2 = ALT_CI_FP_MULT_0(x+i);
+		y += y2;
+		cout << "Current is " << current << "; Output is " << y2 << "; Sum is " << y << "." << endl;
 	}
 	return y;
 }

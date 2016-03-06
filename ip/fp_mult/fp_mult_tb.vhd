@@ -4,7 +4,7 @@ LIBRARY IEEE_proposed;
 
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-USE IEEE.float_pkg.ALL;
+USE IEEE_proposed.float_pkg.ALL;
 USE WORK.fp_mult;
 USE WORK.fp_mult_data_pak.ALL;
 
@@ -12,45 +12,73 @@ ENTITY fp_mult_tb IS
 END ENTITY fp_mult_tb;
 
 ARCHITECTURE tb OF fp_mult_tb IS
-	SIGNAL opcode : std_logic_vector(1 DOWNTO 0);
-	SIGNAL a, b, expected, actual : std_logic_vector(31 DOWNTO 0);
+	SIGNAL a, expected, actual : std_logic_vector(31 DOWNTO 0);
 	SIGNAL clk : std_logic := '0';
-	SIGNAL start, reset, done : std_logic;
+	SIGNAL reset : std_logic := '0';
+	SIGNAL start : std_logic := '0';
+	SIGNAL done : std_logic;
+	
 BEGIN
 
-	clk <= not clk AFTER 10 ns;
+	C1: PROCESS IS
+	BEGIN
+		clk <= '0';
+		WAIT FOR 35 ns;
+		clk <= '1';
+		WAIT FOR 35 ns;
+	END PROCESS C1;
 	
-	E1 : ENTITY fp_mult PORT MAP(clk => clk, start => start, resetn => reset, done => done, opcode => opcode, dataa => a, datab => b, result=>actual);
+	E1 : ENTITY fp_mult PORT MAP(clk => clk, reset => reset, start => start, data => a, result=>actual, done => done);
 	
 	P1 : PROCESS IS
 		VARIABLE rec : data_t_rec;
+		VARIABLE act, exp, btm_lim, top_lim : float32;
+		VARIABLE start_time : time ;
 	BEGIN
-		reset <= '0';
-		WAIT UNTIL rising_edge(clk);
+		-- Reset hardware to have values
 		reset <= '1';
-
+		WAIT UNTIL rising_edge(clk);
+		reset <= '0';
+		
+		-- Test vector without attempted pipelining
 		FOR i IN data'RANGE LOOP
+			start_time := now;
 			rec := data(i);
-			opcode <= rec.op;
-			a <= rec.dataa;
-			b <= rec.datab;
+			a <= rec.data;
 			expected <= rec.result;
-
-			-- Start the hardware
+			-- Start calculation
 			start <= '1';
 			WAIT UNTIL rising_edge(clk);
 			start <= '0';
-			-- Wait until hardware is done
-			WAIT UNTIL done = '1';
+			
+			-- Done will be asserted when it is finished
+			WAIT UNTIL rising_edge(done);
 			
 			-- Check output
-			IF actual = expected THEN
-				REPORT "CYCLE " & integer'image(i) & " EXPECTED " & to_string(to_float(expected)) & " AND RECEIVED " & to_string(to_float(actual)) & " *** PASS *** ";
+			
+			-- Want to check if output is within 10% of true result
+			act := to_float(actual);
+			exp := to_float(expected);
+			-- Calculate limits, adapting to negative numbers
+			IF exp < 0 THEN
+				btm_lim := exp * 1.005;
+				top_lim := exp * 0.995;
 			ELSE
-				ASSERT FALSE;
+				btm_lim := exp * 0.995;
+				top_lim := exp * 1.005;
+			END IF; --expected
+			REPORT "Actual is " & integer'image(to_integer(signed(act)));
+			REPORT "BTM is " & integer'image(to_integer(signed(btm_lim)));
+			REPORT "TOP is " & integer'image(to_integer(signed(top_lim)));
+			
+			IF (act < btm_lim) OR (act > top_lim) THEN
+				ASSERT FALSE
 				REPORT "CYCLE " & integer'image(i) & " EXPECTED " & to_string(to_float(expected)) & " BUT RECEIVED " & to_string(to_float(actual))
 				SEVERITY failure;
-			END IF;
+			ELSE
+				REPORT "CYCLE " & integer'image(i) & " EXPECTED " & integer'image(to_integer(signed(expected))) & " AND RECEIVED " & integer'image(to_integer(signed(actual))) & " *** PASS ***";
+				REPORT "Time taken for calculation is " & time'image(now - start_time);
+			END IF; -- limit check
 		END LOOP;
 		
 		REPORT "ALL TESTS FINISHED CORRECTLY" SEVERITY FAILURE;
