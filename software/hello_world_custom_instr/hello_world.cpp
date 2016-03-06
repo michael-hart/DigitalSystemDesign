@@ -5,6 +5,9 @@
  * Also times the custom code and outputs to stdout.
  *
  */
+ 
+// Define custom instruction macro
+#define ALT_CI_FP_MULT_0(A) __builtin_custom_fnf(0x00,(A))
 
 #include <ctime>
 #include <iostream>

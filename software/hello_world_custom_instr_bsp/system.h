@@ -123,7 +123,7 @@
  *
  */
 
-#define ALT_CI_FP_MULT_0(A) __builtin_custom_fnf(ALT_CI_FP_MULT_0_N,(A))
+#define ALT_CI_FP_MULT_0(A, B) __builtin_custom_inii(ALT_CI_FP_MULT_0_N,(A),(B)
 #define ALT_CI_FP_MULT_0_N 0x0
 
 
