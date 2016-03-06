@@ -1,7 +1,7 @@
 
 LIBRARY IEEE;
 LIBRARY ieee_proposed;
---LIBRARY cordic;
+LIBRARY cordic;
 
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
@@ -12,7 +12,7 @@ use ieee_proposed.fixed_pkg.ALL;
 ENTITY fp_mult IS 
 	PORT(
 		clk, reset, start : IN std_logic;
-		data : IN std_logic_vector(31 DOWNTO 0);
+		dataa, datab : IN std_logic_vector(31 DOWNTO 0);
 		done : OUT std_logic;
 		result : OUT std_logic_vector(31 DOWNTO 0));
 END ENTITY fp_mult;
@@ -38,25 +38,25 @@ BEGIN
 	cos_reset <= not reset;
 
 	-- Instantiate the CORDIC entity for cosine function
-	--C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
-	--	clk => clk,
-	--	reset => cos_reset,
-	--	angle => cos_argument,
-	--	sin => OPEN,
-	--	cos => cos_out,
-	--	start => cos_start,
-	--	done => cos_done
- -- 	);
+	C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
+		clk => clk,
+		reset => cos_reset,
+		angle => cos_argument,
+		sin => OPEN,
+		cos => cos_out,
+		start => cos_start,
+		done => cos_done
+	);
 	
 	P1 : PROCESS IS
 		VARIABLE x : float32;
-		--VARIABLE halfx, x2, rightsum : float32;
+		VARIABLE halfx, x2, rightsum : float32;
 		VARIABLE quarter_signed_x : float32;
-		--VARIABLE negative_cos_out : std_logic;
-		--VARIABLE cos_arg_rads : float32;
-		--VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
-		--VARIABLE cos_out_float : float32;
-		--VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
+		VARIABLE negative_cos_out : std_logic;
+		VARIABLE cos_arg_rads : float32;
+		VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
+		VARIABLE cos_out_float : float32;
+		VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
 		VARIABLE usigned_x : ufixed(7 DOWNTO -10);
 		VARIABLE signed_x : sfixed(8 DOWNTO -10);
 	BEGIN
@@ -66,17 +66,14 @@ BEGIN
 		
 		-- Default done, cos_start value
 		done_i <= '0';
-		--cos_start <= '0';
+		cos_start <= '0';
 		
 		-- If start is asserted, start the calculation
 		IF start = '1' THEN
-			cos_done <= '1';
-		END IF;
-		IF cos_done = '1' THEN
 	    	-- Convert x and define some float operations
-			x := float(data);
-			--halfx := x / 2;
-			--x2 := x * x;
+			x := float(dataa);
+			halfx := x / 2;
+			x2 := x * x;
 
 			-- Floor and divide operation
 			usigned_x := to_ufixed(x, usigned_x);
@@ -87,63 +84,63 @@ BEGIN
 			
 			-- Convert back to 
 			quarter_signed_x := to_float(signed_x, quarter_signed_x);
-			result_i <= std_logic_vector(quarter_signed_x);
-			done_i <= '1';
-		END IF; --cos_done
 
 			-- All angles above 2*pi must be reduced to below 2*pi
-			--quarter_signed_x := abs(quarter_signed_x);
-			--IF quarter_signed_x > eightpi THEN
-			--	quarter_signed_x := quarter_signed_x - eightpi;
-			--ELSIF quarter_signed_x > sixpi THEN
-			--	quarter_signed_x := quarter_signed_x - sixpi;
-			--ELSIF quarter_signed_x > fourpi THEN
-			--	quarter_signed_x := quarter_signed_x - fourpi;
-			--ELSIF quarter_signed_x > twopi THEN
-			--	quarter_signed_x := quarter_signed_x - twopi;
-			--END IF; -- quarter_signed_x
+			quarter_signed_x := abs(quarter_signed_x);
+			IF quarter_signed_x > eightpi THEN
+				quarter_signed_x := quarter_signed_x - eightpi;
+			ELSIF quarter_signed_x > sixpi THEN
+				quarter_signed_x := quarter_signed_x - sixpi;
+			ELSIF quarter_signed_x > fourpi THEN
+				quarter_signed_x := quarter_signed_x - fourpi;
+			ELSIF quarter_signed_x > twopi THEN
+				quarter_signed_x := quarter_signed_x - twopi;
+			END IF; -- quarter_signed_x
 			
 			-- Need to convert quarter_signed_x - 32 to RADIANS in range 0-pi.
-			--cos_arg_rads := quarter_signed_x;
-			--negative_cos_out := '0';
-			--IF cos_arg_rads > threepitwo THEN
-			--	cos_arg_rads := twopi - cos_arg_rads;
-			--ELSIF cos_arg_rads > pi THEN
-			--	cos_arg_rads := cos_arg_rads - pi;
-			--	negative_cos_out := '1';
-			--ELSIF cos_arg_rads > halfpi THEN
-			--	cos_arg_rads := pi - cos_arg_rads;
-			--	negative_cos_out := '1';
-			--END IF; -- cos_arg_rads
+			cos_arg_rads := quarter_signed_x;
+			negative_cos_out := '0';
+			IF cos_arg_rads > threepitwo THEN
+				cos_arg_rads := twopi - cos_arg_rads;
+			ELSIF cos_arg_rads > pi THEN
+				cos_arg_rads := cos_arg_rads - pi;
+				negative_cos_out := '1';
+			ELSIF cos_arg_rads > halfpi THEN
+				cos_arg_rads := pi - cos_arg_rads;
+				negative_cos_out := '1';
+			END IF; -- cos_arg_rads
 				
 			-- Must convert to fixed point for use in CORDIC
-			--cos_arg_rads_fixed := to_sfixed(cos_arg_rads, cos_arg_rads_fixed);
-		 -- 	cos_argument <= std_logic_vector(cos_arg_rads_fixed);
-		 -- 	cos_start <= '1';
+			cos_arg_rads_fixed := to_sfixed(cos_arg_rads, cos_arg_rads_fixed);
+		  	cos_argument <= std_logic_vector(cos_arg_rads_fixed);
+		  	cos_start <= '1';
 		
-		--ELSIF cos_done = '1' THEN
-		--	-- If the cordic algorithm is complete, cos_done is high
+		ELSIF cos_done = '1' THEN
+			-- If the cordic algorithm is complete, cos_done is high
 
-		--	-- Convert std_logic_vector to sfixed and hence to float
-		--	cos_out_fixed := sfixed(cos_out);
-		--	cos_out_float := to_float(cos_out_fixed);
+			-- Convert std_logic_vector to sfixed and hence to float
+			cos_out_fixed := sfixed(cos_out);
+			cos_out_float := to_float(cos_out_fixed);
 
-		--	-- Set top bit of float to negative_cos_out, to account for angles greater than pi
-		--	-- Float has bit indices 8 downto -23, so top bit is bit 8
-		--	cos_out_float(8) := negative_cos_out;
+			-- Set top bit of float to negative_cos_out, to account for angles greater than pi
+			-- Float has bit indices 8 downto -23, so top bit is bit 8
+			cos_out_float(8) := negative_cos_out;
 
-		--	rightsum := x2 * cos_out_float;
-		--	result_i <= to_slv(rightsum + halfx);
+			rightsum := x2 * cos_out_float;
+			rightsum := rightsum + halfx;
+			x := float(datab);
+			rightsum := rightsum + x;
+			result_i <= to_slv(rightsum);
 
-		--	-- Calculations are done, so assert DONE
-		--	done_i <= '1';
-		--END IF; -- cos_done
+			-- Calculations are done, so assert DONE
+			done_i <= '1';
+		END IF; -- cos_done
 		
 		-- Check for reset signal, and overwrite all signals if found
 		IF reset = '1' THEN
 			result_i <= (OTHERS => '0');
-			--cos_argument <= (OTHERS => '0');
-			cos_done <= '0';
+			cos_argument <= (OTHERS => '0');
+			cos_start <= '0';
 		END IF; -- reset
 
 	END PROCESS P1;

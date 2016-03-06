@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dD:\DSD\DigitalSystemDesign\ip\fp_mult
 Efp_mult
-Z1 w1457264629
+Z1 w1457288271
 Z2 DPx13 ieee_proposed 9 fixed_pkg 0 22 j9Xni18icP;3zS7Yicg^m1
 Z3 DPx13 ieee_proposed 17 fixed_float_types 0 22 iVh63YdNZa2_CQb_R2=4S2
 Z4 DPx13 ieee_proposed 9 float_pkg 0 22 PcG[2acffQmTHoRoR@Xf?3
@@ -16,36 +16,39 @@ Z9 8D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd
 Z10 FD:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd
 l0
 L12
-Vj_71FM43I=Ma6_fXTcPb@0
-!s100 W1LLQINbY>CM571FWzW470
+V7LdgI12mP`3]j>VG2D5MU0
 Z11 OV;C;10.1d;51
 32
-!i10b 1
-Z12 !s108 1457264761.779000
+Z12 !s108 1457288285.468000
 Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd|
 Z14 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd|
 Z15 o-work work -2002 -explicit -O0
 Z16 tExplicit 1
+!s100 Q:>]m8onoMmH4ED9[;M]d2
+!i10b 1
 Aarch
+DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z17 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+DEx6 cordic 6 cordic 0 22 C]07Tb[MSFmI<YfPohR9X3
 R2
 R3
 R4
 R5
 R6
 R7
-DEx4 work 7 fp_mult 0 22 j_71FM43I=Ma6_fXTcPb@0
+Z18 DEx4 work 7 fp_mult 0 22 7LdgI12mP`3]j>VG2D5MU0
 l35
 L20
-VY4Z=n]OjoGaVV`fYJf7^b1
-!s100 ]VHj08HfV@dhc9moKCzCB0
+V7MGg6oCa;cok7XTla9:XU0
 R11
 32
-!i10b 1
 R12
 R13
 R14
 R15
 R16
+!s100 50kf1=j3nn<QS>lzRRdD03
+!i10b 1
 Pfp_mult_data_pak
 R6
 R7
@@ -65,10 +68,51 @@ R16
 !s108 1457108554.413000
 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd|
 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd|
+Efp_mult_mem
+Z19 w1457287758
+R5
+R6
+R7
+R8
+Z20 8D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd
+Z21 FD:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd
+l0
+L7
+VE7N7Fg4U7cH@UZd36?41R1
+!s100 ^6U_[JnXgS1>_gTI]8;5:2
+R11
+32
+!i10b 1
+Z22 !s108 1457288285.722000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd|
+Z24 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd|
+R15
+R16
+Artl
+R2
+R3
+R4
+R18
+R5
+R6
+R7
+Z25 DEx4 work 11 fp_mult_mem 0 22 E7N7Fg4U7cH@UZd36?41R1
+l62
+L40
+Z26 Vl@VTSaA1m7T;K7?XQoieY0
+Z27 !s100 U_cjZJF^aMDihQN>WLBRA0
+R11
+32
+!i10b 1
+R22
+R23
+R24
+R15
+R16
 Efp_mult_tb
-Z17 w1457106321
-Z18 DPx4 work 16 fp_mult_data_pak 0 22 ;3GBB3=LdgF>>k62iKN3C1
-Z19 DEx4 work 7 fp_mult 0 22 cnW8WY=W1:eY7hgCVO5YQ1
+Z28 w1457106321
+Z29 DPx4 work 16 fp_mult_data_pak 0 22 ;3GBB3=LdgF>>k62iKN3C1
+DEx4 work 7 fp_mult 0 22 cnW8WY=W1:eY7hgCVO5YQ1
 R2
 R3
 R4
@@ -76,22 +120,22 @@ R5
 R6
 R7
 R8
-Z20 8D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
-Z21 FD:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
+Z30 8D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
+Z31 FD:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
 l0
 L11
 Vd0z8@O^7:lmMHc8TzScR20
 R11
 32
-Z22 !s108 1457108558.278000
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd|
-Z24 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd|
+Z32 !s108 1457108558.278000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd|
+Z34 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd|
 R15
 R16
 !s100 S5KO^65Q8;C]SBRH@EHTD0
 !i10b 1
 Atb
-R18
+R29
 R2
 R3
 R4
@@ -104,9 +148,9 @@ L14
 V0zE^6B[a`iYSkQ4PIo03l1
 R11
 32
-R22
-R23
-R24
+R32
+R33
+R34
 R15
 R16
 !s100 Rj2HgPLn=0:eBgSad8zbc0

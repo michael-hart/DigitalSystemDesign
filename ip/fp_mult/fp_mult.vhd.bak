@@ -12,7 +12,7 @@ use ieee_proposed.fixed_pkg.ALL;
 ENTITY fp_mult IS 
 	PORT(
 		clk, reset, start : IN std_logic;
-		data : IN std_logic_vector(31 DOWNTO 0);
+		dataa, datab : IN std_logic_vector(31 DOWNTO 0);
 		done : OUT std_logic;
 		result : OUT std_logic_vector(31 DOWNTO 0));
 END ENTITY fp_mult;
@@ -46,7 +46,7 @@ BEGIN
 		cos => cos_out,
 		start => cos_start,
 		done => cos_done
-  	);
+	);
 	
 	P1 : PROCESS IS
 		VARIABLE x : float32;
@@ -57,8 +57,8 @@ BEGIN
 		VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
 		VARIABLE cos_out_float : float32;
 		VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
-		VARIABLE usigned_x : ufixed(7 DOWNTO -40);
-		VARIABLE signed_x : sfixed(8 DOWNTO -40);
+		VARIABLE usigned_x : ufixed(7 DOWNTO -10);
+		VARIABLE signed_x : sfixed(8 DOWNTO -10);
 	BEGIN
 	
 		-- Wait for positive edge of clock
@@ -70,14 +70,17 @@ BEGIN
 		
 		-- If start is asserted, start the calculation
 		IF start = '1' THEN
+			cos_done <= '1';
+		END IF;
+		IF cos_done = '1' THEN
 	    	-- Convert x and define some float operations
-			x := float(data);
+			x := float(dataa);
 			halfx := x / 2;
 			x2 := x * x;
 
 			-- Floor and divide operation
 			usigned_x := to_ufixed(x, usigned_x);
-			usigned_x := X"0000" & "00" & usigned_x(7 DOWNTO 2) & X"0000000";
+			usigned_x := "00" & usigned_x(7 DOWNTO 2) & "0000000000";
 			
 			-- Subtract 32 using integer subtraction
 			signed_x := sfixed(usigned_x) - 32;
@@ -127,7 +130,9 @@ BEGIN
 			cos_out_float(8) := negative_cos_out;
 
 			rightsum := x2 * cos_out_float;
-			result_i <= to_slv(rightsum + halfx);
+			rightsum := rightsum + halfx;
+			rightsum := rightsum + float(datab);
+			result_i <= to_slv(rightsum);
 
 			-- Calculations are done, so assert DONE
 			done_i <= '1';
@@ -137,6 +142,7 @@ BEGIN
 		IF reset = '1' THEN
 			result_i <= (OTHERS => '0');
 			cos_argument <= (OTHERS => '0');
+			cos_done <= '0';
 		END IF; -- reset
 
 	END PROCESS P1;

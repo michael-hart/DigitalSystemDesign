@@ -1,0 +1,119 @@
+D:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity fsm
+-- Compiling architecture synthesis of fsm
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Compiling package fixed_pkg
+-- Loading package MATH_REAL
+-- Compiling package body fixed_pkg
+-- Loading package fixed_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl(1470): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl(1471): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl(1472): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_pkg_c.vhdl(6888): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_float_types_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fixed_float_types_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package fixed_float_types
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity atan32
+-- Compiling architecture Arch1 of atan32
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity addsub
+-- Compiling architecture synthesis of addsub
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_mem.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity fp_mult_mem
+-- Compiling architecture rtl of fp_mult_mem
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Loading entity fp_mult
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity shiftn
+-- Compiling architecture synthesis of shiftn
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Compiling package float_pkg
+-- Compiling package body float_pkg
+-- Loading package float_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(1021): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(1022): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(6187): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity cordic
+-- Compiling architecture synthesis of cordic
+-- Loading entity addsub
+-- Loading entity atan32
+-- Loading entity fsm
+-- Loading entity shiftn
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package cordic_pkg
+-- Compiling package body cordic_pkg
+-- Loading package cordic_pkg
+
+} {} {}}
