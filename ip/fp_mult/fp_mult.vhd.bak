@@ -18,11 +18,10 @@ ENTITY fp_mult IS
 END ENTITY fp_mult;
 
 ARCHITECTURE arch OF fp_mult IS
-	SIGNAL cos_start, cos_reset, cos_done, done_i : std_logic;
+	SIGNAL cos_start, cos_done, done_i : std_logic;
 	SIGNAL result_i, cos_argument, cos_out : std_logic_vector(31 DOWNTO 0);
 	CONSTANT floor_divide : float32 := to_float(4.0);
 
-	CONSTANT cos_subtract : std_logic_vector(7 DOWNTO 0) := X"20";
 	CONSTANT pi : float32 := to_float(3.14159265359);
 	CONSTANT twopi : float32 := 2*pi;
 	CONSTANT halfpi : float32 := pi/2;
@@ -34,13 +33,10 @@ ARCHITECTURE arch OF fp_mult IS
 	CONSTANT eightpi : float32 := 8*pi;
 BEGIN
 
-	-- Local reset is active high, but cordic uses active low
-	cos_reset <= not reset;
-
 	-- Instantiate the CORDIC entity for cosine function
 	C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
 		clk => clk,
-		reset => cos_reset,
+		reset => reset,
 		angle => cos_argument,
 		sin => OPEN,
 		cos => cos_out,
@@ -57,8 +53,7 @@ BEGIN
 		VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
 		VARIABLE cos_out_float : float32;
 		VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
-		VARIABLE usigned_x : ufixed(7 DOWNTO -40);
-		VARIABLE signed_x : sfixed(8 DOWNTO -40);
+		VARIABLE floor_var : sfixed(6 DOWNTO 0);
 	BEGIN
 	
 		-- Wait for positive edge of clock
@@ -68,28 +63,26 @@ BEGIN
 		done_i <= '0';
 		cos_start <= '0';
 		
-		-- If start is asserted, start the calculation
-		IF start = '1' THEN
+	    -- If start is asserted, start the calculation
+	    IF start = '1' THEN
 	    	-- Convert x and define some float operations
-			x := float(data);
+			x := to_float(data, x);
 			halfx := x / 2;
 			x2 := x * x;
 
-			-- Floor and divide operation
-			usigned_x := to_ufixed(x, usigned_x);
-			usigned_x := X"0000" & "00" & usigned_x(7 DOWNTO 2) & X"0000000";
+			quarter_signed_x := x / 4;
+			-- Floor operation
+			floor_var := to_sfixed(quarter_signed_x, floor_var);
+			quarter_signed_x := to_float(floor_var);
 			
-			-- Subtract 32 using integer subtraction
-			signed_x := sfixed(usigned_x) - 32;
-			
-			-- Convert back to 
-			quarter_signed_x := to_float(signed_x, quarter_signed_x);
+			-- Subtract 32
+			quarter_signed_x := quarter_signed_x - 32;
 
 			-- All angles above 2*pi must be reduced to below 2*pi
 			quarter_signed_x := abs(quarter_signed_x);
 			IF quarter_signed_x > eightpi THEN
 				quarter_signed_x := quarter_signed_x - eightpi;
-			ELSIF quarter_signed_x > sixpi THEN
+			ELSIF QUArter_signed_x > sixpi THEN
 				quarter_signed_x := quarter_signed_x - sixpi;
 			ELSIF quarter_signed_x > fourpi THEN
 				quarter_signed_x := quarter_signed_x - fourpi;
@@ -98,14 +91,13 @@ BEGIN
 			END IF; -- quarter_signed_x
 			
 			-- Need to convert quarter_signed_x - 32 to RADIANS in range 0-pi.
-			cos_arg_rads := quarter_signed_x;
 			negative_cos_out := '0';
-			IF cos_arg_rads > threepitwo THEN
+			IF quarter_signed_x > threepitwo THEN
 				cos_arg_rads := twopi - cos_arg_rads;
-			ELSIF cos_arg_rads > pi THEN
+			ELSIF quarter_signed_x > pi THEN
 				cos_arg_rads := cos_arg_rads - pi;
 				negative_cos_out := '1';
-			ELSIF cos_arg_rads > halfpi THEN
+			ELSIF quarter_signed_x > halfpi THEN
 				cos_arg_rads := pi - cos_arg_rads;
 				negative_cos_out := '1';
 			END IF; -- cos_arg_rads

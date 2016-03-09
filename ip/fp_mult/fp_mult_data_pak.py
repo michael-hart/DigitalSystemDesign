@@ -47,10 +47,6 @@ if __name__ == '__main__':
 
 	# Create test data points over the set 0:0.1:256
 	test_data = [createRecord(i) for i in np.arange(0, 256, 0.1)]
-	# test_data = [
-	# 	createRecord(5),
-	# 	createRecord(10)
-	# ]
 
 	print("Data collected successfully")
 	# Print array of data to file

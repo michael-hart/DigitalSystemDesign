@@ -14,7 +14,7 @@ END ENTITY fp_mult_tb;
 ARCHITECTURE tb OF fp_mult_tb IS
 	SIGNAL a, expected, actual : std_logic_vector(31 DOWNTO 0);
 	SIGNAL clk : std_logic := '0';
-	SIGNAL reset : std_logic := '0';
+	SIGNAL reset : std_logic := '1';
 	SIGNAL start : std_logic := '0';
 	SIGNAL done : std_logic;
 	
@@ -36,9 +36,9 @@ BEGIN
 		VARIABLE start_time : time ;
 	BEGIN
 		-- Reset hardware to have values
-		reset <= '1';
-		WAIT UNTIL rising_edge(clk);
 		reset <= '0';
+		WAIT UNTIL rising_edge(clk);
+		reset <= '1';
 		
 		-- Test vector without attempted pipelining
 		FOR i IN data'RANGE LOOP
@@ -61,11 +61,11 @@ BEGIN
 			exp := to_float(expected);
 			-- Calculate limits, adapting to negative numbers
 			IF exp < 0 THEN
-				btm_lim := exp * 1.005;
-				top_lim := exp * 0.995;
+				btm_lim := exp * 1.1;
+				top_lim := exp * 0.9;
 			ELSE
-				btm_lim := exp * 0.995;
-				top_lim := exp * 1.005;
+				btm_lim := exp * 0.9;
+				top_lim := exp * 1.1;
 			END IF; --expected
 			REPORT "Actual is " & integer'image(to_integer(signed(act)));
 			REPORT "BTM is " & integer'image(to_integer(signed(btm_lim)));
