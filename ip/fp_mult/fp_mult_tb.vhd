@@ -61,11 +61,11 @@ BEGIN
 			exp := to_float(expected);
 			-- Calculate limits, adapting to negative numbers
 			IF exp < 0 THEN
-				btm_lim := exp * 1.1;
-				top_lim := exp * 0.9;
+				btm_lim := exp * 1.00004;
+				top_lim := exp * 0.99996;
 			ELSE
-				btm_lim := exp * 0.9;
-				top_lim := exp * 1.1;
+				btm_lim := exp * 0.99996;
+				top_lim := exp * 1.00004;
 			END IF; --expected
 			REPORT "Actual is " & integer'image(to_integer(signed(act)));
 			REPORT "BTM is " & integer'image(to_integer(signed(btm_lim)));

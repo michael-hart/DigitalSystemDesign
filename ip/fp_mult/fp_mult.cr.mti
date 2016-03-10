@@ -183,6 +183,23 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling package body cordic_pkg
 -- Loading package cordic_pkg
 
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd {2 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Compiling entity fp_mult
+-- Compiling architecture arch of fp_mult
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity cordic
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd(106): (vcom-1167) Index value -30 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
+
 } {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd {1 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
