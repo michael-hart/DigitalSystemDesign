@@ -36,9 +36,9 @@ BEGIN
 		VARIABLE start_time : time ;
 	BEGIN
 		-- Reset hardware to have values
-		reset <= '0';
-		WAIT UNTIL rising_edge(clk);
 		reset <= '1';
+		WAIT UNTIL rising_edge(clk);
+		reset <= '0';
 		
 		-- Test vector without attempted pipelining
 		FOR i IN data'RANGE LOOP

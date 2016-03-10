@@ -139,7 +139,7 @@ ACDS_VERSION := 13.1
 # Define path to the application ELF. 
 # It may be used by the makefile fragments so is defined before including them. 
 # 
-ELF := hello_world_custom_instr.elf
+ELF := fp_mult.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS :=
@@ -177,7 +177,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := ../hello_world_custom_instr_bsp/
+BSP_ROOT_DIR := ../fp_mult_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=

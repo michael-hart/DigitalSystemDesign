@@ -18,7 +18,7 @@ ENTITY fp_mult IS
 END ENTITY fp_mult;
 
 ARCHITECTURE arch OF fp_mult IS
-	SIGNAL cos_start, cos_done, done_i : std_logic;
+	SIGNAL cos_reset, cos_start, cos_done, done_i : std_logic;
 	SIGNAL result_i, cos_argument, cos_out : std_logic_vector(31 DOWNTO 0);
 	CONSTANT floor_divide : float32 := to_float(4.0);
 
@@ -28,16 +28,15 @@ ARCHITECTURE arch OF fp_mult IS
 	CONSTANT halfpi : float32 := pi/2;
 	CONSTANT threepitwo : float32 := halfpi*3;
 	
-	-- For manual version of REM, need to force anything about 8 pi down to 0-2pi
-	CONSTANT fourpi : float32 := 4*pi;
-	CONSTANT sixpi : float32 := 6*pi;
-	CONSTANT eightpi : float32 := 8*pi;
+	-- State machine definitions
+	TYPE fp_mult_states IS (IDLE, MODULUS, COSINE);
+	SIGNAL fp_fsm : fp_mult_states;
 BEGIN
 
 	-- Instantiate the CORDIC entity for cosine function
 	C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
 		clk => clk,
-		reset => reset,
+		reset => cos_reset,
 		angle => cos_argument,
 		sin => OPEN,
 		cos => cos_out,
@@ -45,6 +44,9 @@ BEGIN
 		done => cos_done
   	);
 	
+	-- cos_reset is active low, module reset is active high, so invert
+	cos_reset <= not reset;
+
 	P1 : PROCESS IS
 		VARIABLE x : float32;
 		VARIABLE halfx, x2, rightsum : float32;
@@ -65,8 +67,8 @@ BEGIN
 		done_i <= '0';
 		cos_start <= '0';
 		
-		-- If start is asserted, start the calculation
-		IF start = '1' THEN
+		-- If start is asserted and system isn't started, start the calculation
+		IF start = '1' AND fp_fsm = IDLE THEN
 	    	-- Convert x and define some float operations
 			x := to_float(data, x);
 			halfx := x / 2;
@@ -80,39 +82,33 @@ BEGIN
 			signed_x := sfixed(usigned_x) - 32;
 			
 			-- Convert back to 
-			quarter_signed_x := to_float(signed_x, quarter_signed_x);
-
-			-- All angles above 2*pi must be reduced to below 2*pi
-			quarter_signed_x := abs(quarter_signed_x);
-			IF quarter_signed_x > eightpi THEN
-				quarter_signed_x := quarter_signed_x - eightpi;
-			ELSIF quarter_signed_x > sixpi THEN
-				quarter_signed_x := quarter_signed_x - sixpi;
-			ELSIF quarter_signed_x > fourpi THEN
-				quarter_signed_x := quarter_signed_x - fourpi;
-			ELSIF quarter_signed_x > twopi THEN
+			quarter_signed_x := abs(to_float(signed_x, quarter_signed_x));
+			fp_fsm <= MODULUS;
+		ELSIF fp_fsm = MODULUS THEN
+			IF quarter_signed_x > twopi THEN
 				quarter_signed_x := quarter_signed_x - twopi;
-			END IF; -- quarter_signed_x
-			
-			-- Need to convert quarter_signed_x - 32 to RADIANS in range 0-pi.
-			cos_arg_rads := quarter_signed_x;
-			negative_cos_out := '0';
-			IF cos_arg_rads > threepitwo THEN
-				cos_arg_rads := twopi - cos_arg_rads;
-			ELSIF cos_arg_rads > pi THEN
-				cos_arg_rads := cos_arg_rads - pi;
-				negative_cos_out := '1';
-			ELSIF cos_arg_rads > halfpi THEN
-				cos_arg_rads := pi - cos_arg_rads;
-				negative_cos_out := '1';
-			END IF; -- cos_arg_rads
-				
-			-- Must convert to fixed point for use in CORDIC
-			cos_arg_rads_fixed := to_sfixed(cos_arg_rads, cos_arg_rads_fixed);
-		  	cos_argument <= std_logic_vector(cos_arg_rads_fixed);
-		  	cos_start <= '1';
-		
-		ELSIF cos_done = '1' THEN
+			ELSE
+				-- Need to convert quarter_signed_x - 32 to RADIANS in range 0-pi.
+				cos_arg_rads := quarter_signed_x;
+				negative_cos_out := '0';
+				IF cos_arg_rads > threepitwo THEN
+					cos_arg_rads := twopi - cos_arg_rads;
+				ELSIF cos_arg_rads > pi THEN
+					cos_arg_rads := cos_arg_rads - pi;
+					negative_cos_out := '1';
+				ELSIF cos_arg_rads > halfpi THEN
+					cos_arg_rads := pi - cos_arg_rads;
+					negative_cos_out := '1';
+				END IF; -- cos_arg_rads
+					
+				-- Must convert to fixed point for use in CORDIC
+				cos_arg_rads_fixed := to_sfixed(cos_arg_rads, cos_arg_rads_fixed);
+			  	cos_argument <= std_logic_vector(cos_arg_rads_fixed);
+			  	cos_start <= '1';
+			  	fp_fsm <= COSINE;
+			END IF;
+
+		ELSIF fp_fsm = COSINE AND cos_done = '1' THEN
 			-- If the cordic algorithm is complete, cos_done is high
 
 			-- Convert std_logic_vector to sfixed and hence to float
@@ -128,10 +124,14 @@ BEGIN
 
 			-- Calculations are done, so assert DONE
 			done_i <= '1';
+			
+			-- Reset fp_fsm
+			fp_fsm <= IDLE;
 		END IF; -- cos_done
 		
 		-- Check for reset signal, and overwrite all signals if found
-		IF reset = '0' THEN
+		IF reset = '1' THEN
+			fp_fsm <= IDLE;
 			result_i <= (OTHERS => '0');
 			cos_argument <= (OTHERS => '0');
 		END IF; -- reset

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>hello_world_custom_instr</name>
+	<name>fp_mult</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -41,7 +41,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>${workspace_loc://hello_world_custom_instr}</value>
+					<value>${workspace_loc://fp_mult}</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>

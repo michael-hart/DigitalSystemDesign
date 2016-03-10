@@ -44,7 +44,7 @@
          type = "int";
       }
    }
-   element fp_mult_0
+   element fp_mult
    {
       datum _sortIndex
       {
@@ -368,7 +368,7 @@
   <parameter name="clockRate" value="50000000" />
   <parameter name="componentName" value="$${FILENAME}_sdram" />
  </module>
- <module kind="fp_mult" version="1.0" enabled="1" name="fp_mult_0" />
+ <module kind="fp_mult" version="1.0" enabled="1" name="fp_mult" />
  <connection
    kind="avalon"
    version="13.1"
@@ -471,7 +471,7 @@
    kind="nios_custom_instruction"
    version="13.1"
    start="cpu.custom_instruction_master"
-   end="fp_mult_0.fp_mult">
+   end="fp_mult.fp_mult">
   <parameter name="CIName" value="fp_mult_0" />
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0" />
