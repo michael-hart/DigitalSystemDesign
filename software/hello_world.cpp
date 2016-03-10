@@ -47,37 +47,13 @@ int main(int argc, char **argv)
 	// The following is used for timing
 	clock_t exec_t1, exec_t2;
 
-//	cout << "Hello, NIOS" << endl;
-//	int fails = 0, passes = 0;
-//	bool pass;
-//	float expected, actual, input;
-//	for (int i = 0; i < 256; i++)
-//	{
-//		expected = floor(i/4.0) - 32;
-//		input = (float)i;
-//		actual = ALT_CI_FP_MULT_0(input);
-//		pass = expected == actual;
-//
-//		cout << "Result for " << i << " is " << actual << " and should be " << expected << (pass ? " PASS " : " *** FAIL ***") << endl;
-//		if (!pass)
-//		{
-//			fails++;
-//		}
-//		else
-//		{
-//			passes++;
-//		}
-//	}
-//	cout << "Number of fails is " << fails << endl;
-//	cout << "Number of passes is " << passes << endl;
-//	cout << "Result for 200 is " << ALT_CI_FP_MULT_0(200.0) << endl;
-
 	// Modify this line for each task in turn
 	cout << "Task " << TASK << endl;
 
 	generateVector(x);
 
 	cout << "Vector generated" << endl;
+	cout << fixed;
 
 	exec_t1 = clock(); // get system time before starting the process
 
@@ -88,7 +64,7 @@ int main(int argc, char **argv)
 	exec_t2 = clock(); // get system time after finishing the process
 
 	// Print output to stdout
-	cout << fixed; // Set output to fixed decimal place
+	 // Set output to fixed decimal place
 	cout << "Procedure time = " << exec_t2 - exec_t1 << " ticks" << endl;
 	cout << "Result = " << y << endl;
 
@@ -115,7 +91,8 @@ float sumVector(float x[], int M)
 	for (i=1; i<M; i++)
 	{
 		current = x[i];
-		y += FP_MULT(current + 0.0);
+		y2 = FP_MULT(current + 0.0);
+		y += y2;
 		cout << "Current is " << current << "; Output is " << y2 << "; Sum is " << y << "." << endl;
 	}
 	return y;

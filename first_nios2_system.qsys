@@ -76,14 +76,6 @@
          type = "int";
       }
    }
-   element sdram.s1
-   {
-      datum baseAddress
-      {
-         value = "8388608";
-         type = "String";
-      }
-   }
    element led_pio.s1
    {
       datum baseAddress
@@ -97,6 +89,14 @@
       datum baseAddress
       {
          value = "16781312";
+         type = "String";
+      }
+   }
+   element sdram.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
          type = "String";
       }
    }

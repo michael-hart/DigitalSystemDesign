@@ -23,10 +23,10 @@ ARCHITECTURE arch OF fp_mult IS
 	CONSTANT floor_divide : float32 := to_float(4.0);
 
 	CONSTANT cos_subtract : std_logic_vector(7 DOWNTO 0) := X"20";
-	CONSTANT pi : float32 := to_float(3.14159265359);
-	CONSTANT twopi : float32 := 2*pi;
-	CONSTANT halfpi : float32 := pi/2;
-	CONSTANT threepitwo : float32 := halfpi*3;
+	CONSTANT pi : ufixed(7 DOWNTO -30) := to_ufixed(3.1415926535897932384626433832795028841971, 7, -30);
+	CONSTANT twopi : ufixed(7 DOWNTO -30) := to_ufixed(2*3.1415926535897932384626433832795028841971, 7, -30);
+	CONSTANT halfpi : ufixed(7 DOWNTO -30) := to_ufixed(0.5*3.1415926535897932384626433832795028841971, 7, -30);
+	CONSTANT threepitwo : ufixed(7 DOWNTO -30) := to_ufixed(1.5*3.1415926535897932384626433832795028841971, 7, -30);
 	
 	-- State machine definitions
 	TYPE fp_mult_states IS (IDLE, MODULUS, COSINE);
@@ -52,12 +52,13 @@ BEGIN
 		VARIABLE halfx, x2, rightsum : float32;
 		VARIABLE quarter_signed_x : float32;
 		VARIABLE negative_cos_out : std_logic;
-		VARIABLE cos_arg_rads : float32;
+		VARIABLE cos_arg_rads : ufixed(7 DOWNTO -30);
 		VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
 		VARIABLE cos_out_float : float32;
 		VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
-		VARIABLE usigned_x : ufixed(7 DOWNTO -10);
-		VARIABLE signed_x : sfixed(8 DOWNTO -10);
+		VARIABLE usigned_x : ufixed(7 DOWNTO -30);
+		VARIABLE usigned_x_long : ufixed(9 DOWNTO -30);
+		--VARIABLE signed_x : sfixed(9 DOWNTO -30);
 	BEGIN
 	
 		-- Wait for positive edge of clock
@@ -76,33 +77,37 @@ BEGIN
 
 			-- Floor and divide operation
 			usigned_x := to_ufixed(x, usigned_x);
-			usigned_x := "00" & usigned_x(7 DOWNTO 2) & "0000000000";
+			usigned_x := "00" & usigned_x(7 DOWNTO 2) & "00" & X"0000000";
 			
-			-- Subtract 32 using integer subtraction
-			signed_x := sfixed(usigned_x) - 32;
+			-- Subtract 32 using integer subtraction. Retain as fixed point
+			usigned_x_long := ufixed(abs(sfixed(usigned_x) - 32));
+			usigned_x := usigned_x_long(7 DOWNTO -30);
 			
-			-- Convert back to 
-			quarter_signed_x := abs(to_float(signed_x, quarter_signed_x));
 			fp_fsm <= MODULUS;
 		ELSIF fp_fsm = MODULUS THEN
-			IF quarter_signed_x > twopi THEN
-				quarter_signed_x := quarter_signed_x - twopi;
+
+			cos_arg_rads := usigned_x;
+			IF cos_arg_rads > twopi THEN
+				usigned_x_long := "0" & (usigned_x - twopi);
+				usigned_x := usigned_x_long(7 DOWNTO -30);
 			ELSE
 				-- Need to convert quarter_signed_x - 32 to RADIANS in range 0-pi.
-				cos_arg_rads := quarter_signed_x;
 				negative_cos_out := '0';
 				IF cos_arg_rads > threepitwo THEN
-					cos_arg_rads := twopi - cos_arg_rads;
+					usigned_x_long := "0" & (twopi - cos_arg_rads);
+					cos_arg_rads := usigned_x_long(7 DOWNTO -30);
 				ELSIF cos_arg_rads > pi THEN
-					cos_arg_rads := cos_arg_rads - pi;
+					usigned_x_long := "0" & (cos_arg_rads - pi);
+					cos_arg_rads := usigned_x_long(7 DOWNTO -30);
 					negative_cos_out := '1';
 				ELSIF cos_arg_rads > halfpi THEN
-					cos_arg_rads := pi - cos_arg_rads;
+					usigned_x_long := "0" & (pi - cos_arg_rads);
+					cos_arg_rads := usigned_x_long(7 DOWNTO -30);
 					negative_cos_out := '1';
 				END IF; -- cos_arg_rads
 					
 				-- Must convert to fixed point for use in CORDIC
-				cos_arg_rads_fixed := to_sfixed(cos_arg_rads, cos_arg_rads_fixed);
+				cos_arg_rads_fixed := sfixed(cos_arg_rads(1 DOWNTO -30));
 			  	cos_argument <= std_logic_vector(cos_arg_rads_fixed);
 			  	cos_start <= '1';
 			  	fp_fsm <= COSINE;

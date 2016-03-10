@@ -16,10 +16,9 @@
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
 // Test case 1 - correct is 57879.867188
-#define TASK 1
-#define step 5
-#define N 52
-//#define N 5
+//#define TASK 1
+//#define step 5
+//#define N 52
 
 // Test case 2 - correct is -76973.390625
 //#define TASK 2
@@ -27,9 +26,9 @@
 //#define N 2551
 
 //Test case 3 - correct is 37022532
-//#define TASK 3
-//#define step 0.001
-//#define N 255001
+#define TASK 3
+#define step 0.001
+#define N 255001
 
 void generateVector(float x[N]);
 float sumVector(float x[], int M);
@@ -93,7 +92,7 @@ float sumVector(float x[], int M)
 		current = x[i];
 		y2 = FP_MULT(current + 0.0);
 		y += y2;
-		cout << "Current is " << current << "; Output is " << y2 << "; Sum is " << y << "." << endl;
+//		cout << "Current is " << current << "; Output is " << y2 << "; Sum is " << y << "." << endl;
 	}
 	return y;
 }
