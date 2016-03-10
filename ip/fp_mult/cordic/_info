@@ -3,356 +3,61 @@ K3
 13
 cModel Technology
 Z0 dD:\DSD\DigitalSystemDesign\ip\fp_mult
-Eaddsub
-Z1 w1457101723
-Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
-Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z6 dD:\DSD\DigitalSystemDesign\ip\fp_mult
-Z7 8D:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd
-Z8 FD:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd
+Patan_pkg
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+w1457642014
+Z3 dD:\DSD\DigitalSystemDesign\ip\fp_mult
+8D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd
+FD:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd
 l0
-L28
-VgI9PhkIjdTOmS[=mIB6D60
-Z9 OV;C;10.1d;51
+L5
+VS3@Z2WaWG3`<6PoW4F9>k3
+Z4 OV;C;10.1d;51
 32
-Z10 !s108 1457619271.158000
-Z11 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd|
-Z12 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/addsub_synthesis.vhd|
-Z13 o-work cordic -2002 -explicit -O0
-Z14 tExplicit 1
-!s100 d0I@HGcH7iZJ:6aaz[UZa2
+Z5 o-work cordic -2002 -explicit -O0
+Z6 tExplicit 1
+!s100 ii<n8L:E]7z?260AZN?fj1
 !i10b 1
-Asynthesis
+!s108 1457643319.099000
+!s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd|
+!s107 D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd|
+Ecordic
+Z7 w1457642650
+Z8 DPx4 work 8 atan_pkg 0 22 S3@Z2WaWG3`<6PoW4F9>k3
+Z9 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
 R2
 R3
+Z10 8D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+Z11 FD:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+l0
+L8
+VAhaKk;D4H47La3XzKI]3S0
+!s100 OjOOYOC1Uoe7]i2e3:P433
 R4
-R5
-DEx4 work 6 addsub 0 22 gI9PhkIjdTOmS[=mIB6D60
-l48
-L46
-V_1QLfaHW4KCU=>kPTi;>U2
-R9
 32
-R10
-R11
+!i10b 1
+Z12 !s108 1457643319.286000
+Z13 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd|
+Z14 !s107 D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd|
+R5
+R6
+Asynth
+R8
+R9
+R1
+R2
+Z15 DEx4 work 6 cordic 0 22 AhaKk;D4H47La3XzKI]3S0
+l26
+L17
+Z16 VUICPCUm^5DV>;>3@JmUI<0
+Z17 !s100 F;efe3^S^S=l2g]JAmDk>3
+R4
+32
+!i10b 1
 R12
 R13
 R14
-!s100 f7]7^aAPCGUfb^Qo55K^80
-!i10b 1
-Eatan32
-R1
-R3
-R4
 R5
 R6
-Z15 8D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd
-Z16 FD:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd
-l0
-L34
-V]N9dBVSW@`GDdAQM?PWYF2
-R9
-32
-Z17 !s108 1457619271.396000
-Z18 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd|
-Z19 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/atan32_Arch1.vhd|
-R13
-R14
-!s100 ^GBX:5m5bVchnhUlOm8Jg0
-!i10b 1
-Aarch1
-R3
-R4
-R5
-DEx4 work 6 atan32 0 22 ]N9dBVSW@`GDdAQM?PWYF2
-l53
-L49
-V@5WoAzIC@igN7Z^ThUGXU2
-R9
-32
-R17
-R18
-R19
-R13
-R14
-!s100 0A]47:Zoa>ck9<hk0ZXO13
-!i10b 1
-Eclockgen
-R1
-R3
-R2
-R4
-R5
-R6
-Z20 8D:/DSD/DigitalSystemDesign/ip/fp_mult/clockgen_rtl.vhd
-Z21 FD:/DSD/DigitalSystemDesign/ip/fp_mult/clockgen_rtl.vhd
-l0
-L30
-VB;jB0fJKcUR0lVUIoMQ9P2
-R9
-32
-Z22 !s108 1457559830.637000
-Z23 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/clockgen_rtl.vhd|
-Z24 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/clockgen_rtl.vhd|
-R13
-R14
-!s100 DPd;LIOLnV^J`a5V>`_0G3
-!i10b 1
-Artl
-R3
-R2
-R4
-R5
-DEx4 work 8 clockgen 0 22 B;jB0fJKcUR0lVUIoMQ9P2
-l50
-L49
-VE0RzAo2[6Xg@KI5bMPc<@3
-R9
-32
-R22
-R23
-R24
-R13
-R14
-!s100 ahHH@b7fJczW]CL0S=mgU0
-!i10b 1
-Ecordic
-R1
-R2
-R3
-R4
-R5
-R6
-Z25 8D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd
-Z26 FD:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd
-l0
-L30
-VC]07Tb[MSFmI<YfPohR9X3
-R9
-32
-Z27 !s108 1457619271.984000
-Z28 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd|
-Z29 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_synthesis.vhd|
-R13
-R14
-!s100 :DX^^T[=ZAf]fI]9lGSef0
-!i10b 1
-Asynthesis
-DEx6 cordic 6 shiftn 0 22 QCK1B0TFJ1gOfX_lAOhLb3
-DEx6 cordic 3 fsm 0 22 coK7A_UI63`L<eIz6E>]70
-DEx6 cordic 6 atan32 0 22 ]N9dBVSW@`GDdAQM?PWYF2
-DEx6 cordic 6 addsub 0 22 gI9PhkIjdTOmS[=mIB6D60
-R2
-DEx4 work 6 cordic 0 22 C]07Tb[MSFmI<YfPohR9X3
-R3
-R4
-R5
-l152
-L74
-VY<jL2Y;SQNR8O21WAPn9W2
-R9
-32
-R27
-R28
-R29
-R13
-R14
-!s100 g0K5CmWoBQLWMD5c8EJY22
-!i10b 1
-Pcordic_pkg
-R4
-R5
-R1
-R6
-Z30 8D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd
-Z31 FD:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd
-l0
-L22
-Vf16g=AQAFA4Z^i@>m]I<S2
-R9
-32
-b1
-Z32 !s108 1457619271.686000
-Z33 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd|
-Z34 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_pkg_pkg.vhd|
-R13
-R14
-!s100 6^3g2]8l5enDQZ3[D_V4H1
-!i10b 1
-Bbody
-DPx4 work 10 cordic_pkg 0 22 f16g=AQAFA4Z^i@>m]I<S2
-R4
-R5
-l0
-L33
-V0id:Ef3oS51Oz:iFjkUlk0
-R9
-32
-R32
-R33
-R34
-R13
-R14
-nbody
-!s100 MejJKW;Y4QOlZgRRMXb4e0
-!i10b 1
-Ecordic_tb
-R1
-R6
-Z35 8D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tb_struct.vhd
-Z36 FD:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tb_struct.vhd
-l0
-L24
-V8L<OlR:0JbL9KfNh5X0PB2
-R9
-32
-Z37 !s108 1457559831.396000
-Z38 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tb_struct.vhd|
-Z39 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tb_struct.vhd|
-R13
-R14
-!s100 hRY<=aGnLbAYKPbUNA72o3
-!i10b 1
-Astruct
-DEx6 cordic 13 cordic_tester 0 22 >2TEB5>M1ZnG==2aP9Fma0
-DEx6 cordic 6 cordic 0 22 C]07Tb[MSFmI<YfPohR9X3
-DEx6 cordic 8 clockgen 0 22 B;jB0fJKcUR0lVUIoMQ9P2
-DEx4 work 9 cordic_tb 0 22 8L<OlR:0JbL9KfNh5X0PB2
-Z40 DPx6 cordic 10 cordic_pkg 0 22 f16g=AQAFA4Z^i@>m]I<S2
-R2
-R3
-R4
-R5
-l130
-L65
-VXCT^6n42U0f;Kem@<>2a@3
-R9
-32
-R37
-R38
-R39
-R13
-R14
-!s100 5k]akgkI>>o41`aVED9]52
-!i10b 1
-Ecordic_tester
-R1
-R40
-R2
-R3
-R4
-R5
-R6
-Z41 8D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tester_behavioral.vhd
-Z42 FD:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tester_behavioral.vhd
-l0
-L30
-V>2TEB5>M1ZnG==2aP9Fma0
-R9
-32
-Z43 !s108 1457559831.640000
-Z44 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tester_behavioral.vhd|
-Z45 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/cordic_tester_behavioral.vhd|
-R13
-R14
-!s100 ec`U5nWHN^X1jK::dTSNF3
-!i10b 1
-Abehavioral
-R40
-R2
-R3
-R4
-R5
-DEx4 work 13 cordic_tester 0 22 >2TEB5>M1ZnG==2aP9Fma0
-l66
-L51
-V4SVGDA`g_@RK?VWJdTeA;0
-R9
-32
-R43
-R44
-R45
-R13
-R14
-!s100 2lC5Xb7HM1NafjA5g6G?L1
-!i10b 1
-Efsm
-R1
-R3
-R2
-R4
-R5
-R6
-Z46 8D:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd
-Z47 FD:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd
-l0
-L30
-VcoK7A_UI63`L<eIz6E>]70
-R9
-32
-Z48 !s108 1457619273.917000
-Z49 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd|
-Z50 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/fsm_synthesis.vhd|
-R13
-R14
-!s100 WRGc7RZ_ZD5U>P^>0k>AM2
-!i10b 1
-Asynthesis
-R3
-R2
-R4
-R5
-DEx4 work 3 fsm 0 22 coK7A_UI63`L<eIz6E>]70
-l85
-L67
-V4PBMeZbQ;;LD^IPennAOP3
-!s100 ]`TZkDHC5j7>Uj3==7`JB2
-R9
-32
-R48
-R49
-R50
-R13
-R14
-!i10b 1
-Eshiftn
-R1
-R2
-R3
-R4
-R5
-R6
-Z51 8D:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd
-Z52 FD:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd
-l0
-L26
-VQCK1B0TFJ1gOfX_lAOhLb3
-!s100 U^<1MdmARfnB0Qcc]mAn:3
-R9
-32
-!i10b 1
-Z53 !s108 1457619274.166000
-Z54 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd|
-Z55 !s107 D:/DSD/DigitalSystemDesign/ip/fp_mult/shiftn_synthesis.vhd|
-R13
-R14
-Asynthesis
-R2
-R3
-R4
-R5
-Z56 DEx4 work 6 shiftn 0 22 QCK1B0TFJ1gOfX_lAOhLb3
-l50
-L43
-Z57 V2a8IE9:5PG3HVb1<DjHm<2
-Z58 !s100 n:8_5F46TF2k5UWOcVMYJ3
-R9
-32
-!i10b 1
-R53
-R54
-R55
-R13
-R14

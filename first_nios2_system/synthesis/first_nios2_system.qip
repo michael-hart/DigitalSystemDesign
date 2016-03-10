@@ -2,7 +2,7 @@ set_global_assignment -entity "first_nios2_system" -library "first_nios2_system"
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "first_nios2_system" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../first_nios2_system.sopcinfo"]
-set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1457621591"
+set_global_assignment -entity "first_nios2_system" -library "first_nios2_system" -name SLD_INFO "QSYS_NAME first_nios2_system HAS_SOPCINFO 1 GENERATION_ID 1457643642"
 set_global_assignment -library "first_nios2_system" -name MISC_FILE [file join $::quartus(qip_path) "../../first_nios2_system.cmp"]
 set_global_assignment -library "first_nios2_system" -name SLD_FILE [file join $::quartus(qip_path) "first_nios2_system.regmap"]
 set_global_assignment -library "first_nios2_system" -name SLD_FILE [file join $::quartus(qip_path) "first_nios2_system.debuginfo"]
@@ -48,12 +48,8 @@ set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $
 set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/fixed_pkg_c.vhdl"]
 set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/float_pkg_c.vhdl"]
 set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/fp_mult.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/addsub_synthesis.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/atan32_Arch1.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/cordic_pkg_pkg.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/cordic_synthesis.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/fsm_synthesis.vhd"]
-set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/shiftn_synthesis.vhd"]
+set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/atan_pkg.vhd"]
+set_global_assignment -library "first_nios2_system" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/cordic.vhd"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_sdram.v"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_led_pio.v"]
 set_global_assignment -library "first_nios2_system" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/first_nios2_system_sysid.v"]

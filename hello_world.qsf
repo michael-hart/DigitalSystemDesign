@@ -106,12 +106,8 @@ set_location_assignment PIN_A3 -to oDRAM_A[1]
 set_location_assignment PIN_C4 -to oDRAM_A[0]
 set_location_assignment PIN_B8 -to oDRAM_DQM[1]
 set_location_assignment PIN_E7 -to oDRAM_DQM[0]
-set_global_assignment -name VHDL_FILE ip/fp_mult/shiftn_synthesis.vhd -library cordic
-set_global_assignment -name VHDL_FILE ip/fp_mult/fsm_synthesis.vhd -library cordic
-set_global_assignment -name VHDL_FILE ip/fp_mult/cordic_synthesis.vhd -library cordic
-set_global_assignment -name VHDL_FILE ip/fp_mult/cordic_pkg_pkg.vhd -library cordic
-set_global_assignment -name VHDL_FILE ip/fp_mult/atan32_Arch1.vhd -library cordic
-set_global_assignment -name VHDL_FILE ip/fp_mult/addsub_synthesis.vhd -library cordic
+set_global_assignment -name VHDL_FILE ip/cordic/cordic.vhd -library cordic
+set_global_assignment -name VHDL_FILE ip/cordic/atan_pkg.vhd -library cordic
 set_global_assignment -name VHDL_FILE ip/fp_mult/fp_mult.vhd
 set_global_assignment -name VHDL_FILE ip/fp_mult/float_pkg_c.vhdl -library ieee_proposed
 set_global_assignment -name VHDL_FILE ip/fp_mult/fixed_pkg_c.vhdl -library ieee_proposed

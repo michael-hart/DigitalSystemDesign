@@ -18,7 +18,7 @@ ENTITY fp_mult IS
 END ENTITY fp_mult;
 
 ARCHITECTURE arch OF fp_mult IS
-	SIGNAL cos_reset, cos_start, cos_done, done_i : std_logic;
+	SIGNAL cos_start, cos_done, done_i : std_logic;
 	SIGNAL result_i, cos_argument, cos_out : std_logic_vector(31 DOWNTO 0);
 	CONSTANT floor_divide : float32 := to_float(4.0);
 
@@ -34,18 +34,14 @@ ARCHITECTURE arch OF fp_mult IS
 BEGIN
 
 	-- Instantiate the CORDIC entity for cosine function
-	C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
+	C2 : ENTITY cordic.cordic PORT MAP (
 		clk => clk,
-		reset => cos_reset,
+		reset => reset,
 		angle => cos_argument,
-		sin => OPEN,
 		cos => cos_out,
 		start => cos_start,
 		done => cos_done
   	);
-	
-	-- cos_reset is active low, module reset is active high, so invert
-	cos_reset <= not reset;
 
 	P1 : PROCESS IS
 		VARIABLE x : float32;

@@ -1,0 +1,107 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\DSD\DigitalSystemDesign\ip\cordic
+Pfixed_float_types
+Z1 w1457082258
+Z2 dD:\DSD\DigitalSystemDesign\ip\cordic
+8D:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl
+FD:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl
+l0
+L16
+ViVh63YdNZa2_CQb_R2=4S2
+Z3 OV;C;10.1d;51
+32
+Z4 o-work ieee_proposed -2002 -explicit -O0
+Z5 tExplicit 1
+!s100 K7S6f`lOn:f8[LPBGH_0k0
+!i10b 1
+!s108 1457644561.049000
+!s90 -reportprogress|300|-work|ieee_proposed|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl|
+!s107 D:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl|
+Pfixed_pkg
+Z6 DPx13 ieee_proposed 17 fixed_float_types 0 22 iVh63YdNZa2_CQb_R2=4S2
+Z7 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z8 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z9 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+R1
+R2
+Z10 8D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl
+Z11 FD:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl
+l0
+L25
+Vj9Xni18icP;3zS7Yicg^m1
+R3
+32
+b1
+Z12 !s108 1457644561.288000
+Z13 !s90 -reportprogress|300|-work|ieee_proposed|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl|
+Z14 !s107 D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl|
+R4
+R5
+!s100 :Sc_J`h?5o5<gVM>l0d_l0
+!i10b 1
+Bbody
+DPx4 work 9 fixed_pkg 0 22 j9Xni18icP;3zS7Yicg^m1
+Z15 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+R6
+R7
+R8
+R9
+l0
+L1466
+V8LDA7S17Rle099DZ3UA;21
+R3
+32
+R12
+R13
+R14
+R4
+R5
+nbody
+!s100 `9b^O=USoG2g6HU[Qc4g41
+!i10b 1
+Pfloat_pkg
+Z16 DPx13 ieee_proposed 9 fixed_pkg 0 22 j9Xni18icP;3zS7Yicg^m1
+R6
+R7
+R8
+R9
+R1
+R2
+Z17 8D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl
+Z18 FD:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl
+l0
+L28
+VPcG[2acffQmTHoRoR@Xf?3
+!s100 fTinIfQ]XhJR]>hmi:zKG2
+R3
+32
+b1
+!i10b 1
+Z19 !s108 1457644561.778000
+Z20 !s90 -reportprogress|300|-work|ieee_proposed|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl|
+Z21 !s107 D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl|
+R4
+R5
+Bbody
+DPx4 work 9 float_pkg 0 22 PcG[2acffQmTHoRoR@Xf?3
+R16
+R6
+R7
+R8
+R9
+l0
+L1006
+VIQVX?CYFNR?D3XZ5SdJk60
+!s100 W=UaYmn:AN6CP]^zTU^Z52
+R3
+32
+!i10b 1
+R19
+R20
+R21
+R4
+R5
+nbody

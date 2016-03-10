@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'first_nios2_system'
  * SOPC Builder design path: D:/DSD/DigitalSystemDesign/first_nios2_system.sopcinfo
  *
- * Generated: Thu Mar 10 14:59:45 GMT 2016
+ * Generated: Thu Mar 10 21:06:43 GMT 2016
  */
 
 /*
@@ -123,7 +123,7 @@
  *
  */
 
-#define ALT_CI_FP_MULT_0(A) __builtin_custom_ini(ALT_CI_FP_MULT_0_N,(A))
+#define ALT_CI_FP_MULT_0(A,B) __builtin_custom_inii(ALT_CI_FP_MULT_0_N,(A),(B))
 #define ALT_CI_FP_MULT_0_N 0x0
 
 
@@ -309,7 +309,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1457621591
+#define SYSID_TIMESTAMP 1457643642
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */
