@@ -9,9 +9,11 @@
 #include <ctime>
 #include <iostream>
 #include <cmath>
+#include <math.h>
 
 // Define custom instruction macro
 #define FP_MULT(A) __builtin_custom_fnf(0x00,(A))
+#define HW_COS(A) __builtin_custom_ini(0x01, (A))
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
@@ -43,29 +45,40 @@ int main(int argc, char **argv)
 	// Returned result
 	float y;
 
-	// The following is used for timing
-	clock_t exec_t1, exec_t2;
+	// Check output of cosine
+	for (float i = 0; i < 10; i++) {
+		y = HW_COS((i/(2*M_PI))*pow(2,30));
+		cout << "Cosine of " << (i/(2*M_PI)) << " is " << (y*pow(2,-30)) << endl;
+	}
 
-	// Modify this line for each task in turn
-	cout << "Task " << TASK << endl;
+	for (float i = 0; i < 10; i++) {
+		y = FP_MULT(i);
+		cout << "FP_MULT of " << i << " is " << y << " and should be " <<  (i/2) + i*i*cos(floor(i/4) - 32) << "." << endl;
+	}
 
-	generateVector(x);
-
-	cout << "Vector generated" << endl;
-	cout << fixed;
-
-	exec_t1 = clock(); // get system time before starting the process
-
-	// The code that you want to time goes here
-	y = sumVector(x, N);
-
-	// till here
-	exec_t2 = clock(); // get system time after finishing the process
-
-	// Print output to stdout
-	 // Set output to fixed decimal place
-	cout << "Procedure time = " << exec_t2 - exec_t1 << " ticks" << endl;
-	cout << "Result = " << y << endl;
+//	// The following is used for timing
+//	clock_t exec_t1, exec_t2;
+//
+//	// Modify this line for each task in turn
+//	cout << "Task " << TASK << endl;
+//
+//	generateVector(x);
+//
+//	cout << "Vector generated" << endl;
+//	cout << fixed;
+//
+//	exec_t1 = clock(); // get system time before starting the process
+//
+//	// The code that you want to time goes here
+//	y = sumVector(x, N);
+//
+//	// till here
+//	exec_t2 = clock(); // get system time after finishing the process
+//
+//	// Print output to stdout
+//	 // Set output to fixed decimal place
+//	cout << "Procedure time = " << exec_t2 - exec_t1 << " ticks" << endl;
+//	cout << "Result = " << y << endl;
 
 	return 0;
 }
@@ -90,9 +103,9 @@ float sumVector(float x[], int M)
 	for (i=1; i<M; i++)
 	{
 		current = x[i];
-		y2 = FP_MULT(current + 0.0);
+		y2 = FP_MULT(current);
 		y += y2;
-//		cout << "Current is " << current << "; Output is " << y2 << "; Sum is " << y << "." << endl;
+		cout << "Current is " << current << "; Output is " << y2 << "; Correct is " << (current/2) + current*current*cos(floor(current/4) - 32) << "." << endl;
 	}
 	return y;
 }

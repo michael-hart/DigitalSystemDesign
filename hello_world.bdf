@@ -311,7 +311,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 776 80 1288 432)
+	(rect 784 80 1296 432)
 	(text "first_nios2_system" (rect 200 -1 328 15)(font "Arial" (font_size 10)))
 	(text "inst1" (rect 8 336 31 348)(font "Arial" ))
 	(port
@@ -435,62 +435,6 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt 448 168)
-	(pt 448 192)
-)
-(connector
-	(pt 448 192)
-	(pt 776 192)
-)
-(connector
-	(pt 560 152)
-	(pt 776 152)
-)
-(connector
-	(pt 536 272)
-	(pt 776 272)
-	(bus)
-)
-(connector
-	(pt 536 288)
-	(pt 776 288)
-	(bus)
-)
-(connector
-	(pt 536 304)
-	(pt 776 304)
-)
-(connector
-	(pt 536 320)
-	(pt 776 320)
-)
-(connector
-	(pt 536 336)
-	(pt 776 336)
-)
-(connector
-	(pt 536 352)
-	(pt 776 352)
-	(bus)
-)
-(connector
-	(pt 536 368)
-	(pt 776 368)
-	(bus)
-)
-(connector
-	(pt 536 384)
-	(pt 776 384)
-)
-(connector
-	(pt 536 400)
-	(pt 776 400)
-)
-(connector
-	(pt 560 152)
-	(pt 560 24)
-)
-(connector
 	(pt 528 40)
 	(pt 528 -64)
 )
@@ -503,15 +447,71 @@ applicable agreement for further details.
 	(pt 232 24)
 )
 (connector
-	(pt 536 232)
-	(pt 776 232)
-	(bus)
-)
-(connector
 	(pt 472 24)
 	(pt 560 24)
 )
 (connector
 	(pt 472 40)
 	(pt 528 40)
+)
+(connector
+	(pt 448 168)
+	(pt 448 192)
+)
+(connector
+	(pt 560 24)
+	(pt 560 152)
+)
+(connector
+	(pt 560 152)
+	(pt 784 152)
+)
+(connector
+	(pt 448 192)
+	(pt 784 192)
+)
+(connector
+	(pt 536 232)
+	(pt 784 232)
+	(bus)
+)
+(connector
+	(pt 536 272)
+	(pt 784 272)
+	(bus)
+)
+(connector
+	(pt 536 288)
+	(pt 784 288)
+	(bus)
+)
+(connector
+	(pt 536 304)
+	(pt 784 304)
+)
+(connector
+	(pt 536 320)
+	(pt 784 320)
+)
+(connector
+	(pt 536 336)
+	(pt 784 336)
+)
+(connector
+	(pt 536 368)
+	(pt 784 368)
+	(bus)
+)
+(connector
+	(pt 536 384)
+	(pt 784 384)
+)
+(connector
+	(pt 536 400)
+	(pt 784 400)
+)
+(connector
+	(pt 536 352)
+	(pt 784 352)
+	(bus)
 )

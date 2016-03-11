@@ -31,6 +31,7 @@ BEGIN
 	sign_z <= Z(31);
 
 	P1 : PROCESS IS
+		VARIABLE sign_z : std_logic;
 	BEGIN
 		WAIT UNTIL rising_edge(clk);
 
@@ -63,17 +64,17 @@ BEGIN
 			-- Add one to count
 			count <= std_logic_vector(unsigned(count) + 1);
 
-			IF count = "011111" THEN
+			IF count = "100000" THEN
 				done_i <= '1';
 				cos_i <= X;
-				started <= '0';
+				started := '0';
 			END IF; -- count
 
 		END IF; --started
 
 		-- Check for reset 
 		IF reset = '1' THEN
-			started <= '0';
+			started := '0';
 			Z <= (OTHERS => '0');
 			X <= (OTHERS => '0');
 			Y <= (OTHERS => '0');

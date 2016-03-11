@@ -1,1 +1,83 @@
+D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Compiling package fixed_pkg
+-- Loading package MATH_REAL
+-- Compiling package body fixed_pkg
+-- Loading package fixed_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl(1470): (vcom-1246) Range 0 downto 1 is null.
 
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl(1471): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl(1472): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/fixed_pkg_c.vhdl(6888): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/fixed_float_types_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package fixed_float_types
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package atan_pkg
+-- Compiling entity cordic
+-- Compiling architecture synth of cordic
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/cordic_tb.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/cordic_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Loading package atan_pkg
+-- Loading entity cordic
+-- Loading package cos_data_pak
+-- Compiling entity cordic_tb
+-- Compiling architecture tb of cordic_tb
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Compiling package float_pkg
+-- Compiling package body float_pkg
+-- Loading package float_pkg
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl(1021): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl(1022): (vcom-1246) Range 0 downto 1 is null.
+
+** Warning: [3] D:/DSD/DigitalSystemDesign/ip/cordic/float_pkg_c.vhdl(6187): (vcom-1246) Range 2 to 1 is null.
+
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package cos_data_pak
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package atan_pkg
+
+} {} {}}

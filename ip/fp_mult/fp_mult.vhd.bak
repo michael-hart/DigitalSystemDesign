@@ -18,9 +18,8 @@ ENTITY fp_mult IS
 END ENTITY fp_mult;
 
 ARCHITECTURE arch OF fp_mult IS
-	SIGNAL cos_reset, cos_start, cos_done, done_i : std_logic;
+	SIGNAL cos_start, cos_done, done_i : std_logic;
 	SIGNAL result_i, cos_argument, cos_out : std_logic_vector(31 DOWNTO 0);
-	CONSTANT floor_divide : float32 := to_float(4.0);
 
 	CONSTANT cos_subtract : std_logic_vector(7 DOWNTO 0) := X"20";
 	CONSTANT pi : ufixed(7 DOWNTO -30) := to_ufixed(3.1415926535897932384626433832795028841971, 7, -30);
@@ -34,23 +33,18 @@ ARCHITECTURE arch OF fp_mult IS
 BEGIN
 
 	-- Instantiate the CORDIC entity for cosine function
-	C2 : ENTITY cordic.cordic GENERIC MAP (WIDTH => 32) PORT MAP (
+	C2 : ENTITY cordic.cordic PORT MAP (
 		clk => clk,
-		reset => cos_reset,
+		reset => reset,
 		angle => cos_argument,
-		sin => OPEN,
 		cos => cos_out,
 		start => cos_start,
 		done => cos_done
   	);
-	
-	-- cos_reset is active low, module reset is active high, so invert
-	cos_reset <= not reset;
 
 	P1 : PROCESS IS
 		VARIABLE x : float32;
 		VARIABLE halfx, x2, rightsum : float32;
-		VARIABLE quarter_signed_x : float32;
 		VARIABLE negative_cos_out : std_logic;
 		VARIABLE cos_arg_rads : ufixed(7 DOWNTO -30);
 		VARIABLE cos_arg_rads_fixed : sfixed(1 DOWNTO -30);
@@ -58,7 +52,6 @@ BEGIN
 		VARIABLE cos_out_fixed : sfixed(1 DOWNTO -30);
 		VARIABLE usigned_x : ufixed(7 DOWNTO -30);
 		VARIABLE usigned_x_long : ufixed(9 DOWNTO -30);
-		--VARIABLE signed_x : sfixed(9 DOWNTO -30);
 	BEGIN
 	
 		-- Wait for positive edge of clock
@@ -118,7 +111,7 @@ BEGIN
 
 			-- Convert std_logic_vector to sfixed and hence to float
 			cos_out_fixed := sfixed(cos_out);
-			cos_out_float := to_float(cos_out_fixed);
+			cos_out_float := to_float(sfixed(cos_out_fixed));
 
 			-- Set top bit of float to negative_cos_out, to account for angles greater than pi
 			-- Float has bit indices 8 downto -23, so top bit is bit 8
