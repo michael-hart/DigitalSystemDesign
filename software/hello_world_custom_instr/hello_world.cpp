@@ -11,7 +11,7 @@
 #include <cmath>
 
 // Define custom instruction macro
-#define FP_MULT(A) __builtin_custom_fnf(0x00,(A))
+#define FP_MULT(A, B) __builtin_custom_fnff(0x00,(A),(B))
 
 // Comment and uncomment to perform each test case; ensure to recompile each time
 
@@ -87,7 +87,7 @@ float sumVector(float x[], int M)
 	float y=0;
 	for (int i=1; i<M; i++)
 	{
-		y += FP_MULT(x[i]);
+		y = FP_MULT(x[i], y);
 	}
 	return y;
 }

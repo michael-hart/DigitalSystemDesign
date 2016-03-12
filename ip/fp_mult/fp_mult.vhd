@@ -11,7 +11,7 @@ use ieee_proposed.fixed_pkg.ALL;
 ENTITY fp_mult IS 
 	PORT(
 		clk, reset, start : IN std_logic;
-		data : IN std_logic_vector(31 DOWNTO 0);
+		dataa, datab : IN std_logic_vector(31 DOWNTO 0);
 		done : OUT std_logic;
 		result : OUT std_logic_vector(31 DOWNTO 0));
 END ENTITY fp_mult;
@@ -69,7 +69,7 @@ BEGIN
 		-- If start is asserted and system isn't started, start the calculation
 		IF start = '1' AND fp_fsm = IDLE THEN
 	    	-- Convert x and define some float operations
-			x := to_float(data, x);
+			x := to_float(dataa, x);
 			
 			-- Floor and divide operation
 			usigned_x := to_ufixed(x, usigned_x);
@@ -136,7 +136,7 @@ BEGIN
 		ELSIF fp_fsm = SUMDONE THEN
 
 			-- Output result to result_i
-			allsum := halfx + rightsum;
+			allsum := to_float(datab) + halfx + rightsum;
 			result_i <= to_slv(allsum);
 			done_i <= '1';
 			
