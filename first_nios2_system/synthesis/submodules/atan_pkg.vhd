@@ -1,11 +1,13 @@
 LIBRARY IEEE;
+LIBRARY IEEE_proposed;
 
 USE IEEE.std_logic_1164.ALL;
+USE IEEE_proposed.fixed_pkg.ALL;
 
 PACKAGE atan_pkg IS
 
 	-- Define data types array
-	TYPE atan_table_t IS ARRAY (natural RANGE <>) OF std_logic_vector(31 DOWNTO 0);
+	TYPE atan_table_t IS ARRAY (natural RANGE <>) OF sfixed(1 DOWNTO -30);
 
 	CONSTANT atan_table : atan_table_t := (
 		(X"3243F6A8"),

@@ -1,36 +1,37 @@
 LIBRARY IEEE;
+LIBRARY IEEE_proposed;
+LIBRARY CORDIC;
 
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
+USE IEEE_proposed.fixed_pkg.ALL;
 -- atan_table generated using atan_pkg.py
-USE WORK.atan_pkg.ALL;
+USE CORDIC.atan_pkg.ALL;
 
 ENTITY cordic IS
 	PORT(
 		clk, start, reset : std_logic;
 		done : OUT std_logic;
-		angle : IN std_logic_vector(31 DOWNTO 0);
-		cos : OUT std_logic_vector(31 DOWNTO 0)
+		angle : IN sfixed(1 DOWNTO -30);
+		cos : OUT sfixed(1 DOWNTO -30)
 	);
 END ENTITY cordic;
 
 ARCHITECTURE synth OF cordic IS
 	SIGNAL done_i : std_logic;
-	SIGNAL cos_i : std_logic_vector(31 DOWNTO 0);
-	CONSTANT INIT_X : std_logic_vector(31 DOWNTO 0) := X"26dd3b6a"; -- see useful.py
-	SIGNAL X, Y, Z : std_logic_vector(31 DOWNTO 0);
-	SIGNAL count : std_logic_vector(5 DOWNTO 0);
-	SIGNAL started, sign_z : std_logic;
+	SIGNAL cos_i : sfixed(1 DOWNTO -30);
+	CONSTANT INIT_X : sfixed(1 DOWNTO -30) := X"26dd3b6a"; -- see useful.py
+	SIGNAL X, Y, Z : sfixed(1 DOWNTO -30);
+	SIGNAL count : INTEGER;
+	SIGNAL started : std_logic;
 BEGIN
 
 	-- Assign signals to outputs
 	done <= done_i;
 	cos <= cos_i;
 
-	-- Assign sign_z to to top bit of Z
-	sign_z <= Z(31);
-
 	P1 : PROCESS IS
+		VARIABLE x_shifted, y_shifted : sfixed(1 DOWNTO -30);
 	BEGIN
 		WAIT UNTIL rising_edge(clk);
 
@@ -39,7 +40,7 @@ BEGIN
 		cos_i <= (OTHERS => '0');
 
 		IF start = '1' AND started = '0' THEN
-			count <= "000000";
+			count <= 0;
 			started <= '1';
 			Z <= angle;
 			X <= INIT_X;
@@ -48,25 +49,28 @@ BEGIN
 
 		IF started = '1' THEN 
 			
-			CASE sign_z IS
-				WHEN '0' => 
-					X <= std_logic_vector(signed(X) - SHIFT_RIGHT(signed(Y), to_integer(unsigned(count))));
-					Y <= std_logic_vector(signed(Y) + SHIFT_RIGHT(signed(X), to_integer(unsigned(count))));
-					Z <= std_logic_vector(signed(Z) - signed(atan_table(to_integer(unsigned(count)))));
-				WHEN '1' => 
-					X <= std_logic_vector(signed(X) + SHIFT_RIGHT(signed(Y), to_integer(unsigned(count))));
-					Y <= std_logic_vector(signed(Y) - SHIFT_RIGHT(signed(X), to_integer(unsigned(count))));
-					Z <= std_logic_vector(signed(Z) + signed(atan_table(to_integer(unsigned(count)))));
-				WHEN OTHERS => NULL;
-			END CASE; --sign_z
-
-			-- Add one to count
-			count <= std_logic_vector(unsigned(count) + 1);
-
-			IF count = "011111" THEN
+			IF count = 32 THEN
 				done_i <= '1';
 				cos_i <= X;
 				started <= '0';
+			ELSE
+				x_shifted := sfixed(SHIFT_RIGHT(signed(X), count));
+				y_shifted := sfixed(SHIFT_RIGHT(signed(Y), count));
+				CASE Z(1) IS
+					WHEN '0' => 
+						X <= resize(X - y_shifted, 1, -30);
+						Y <= resize(Y + x_shifted, 1, -30);
+						Z <= resize(Z - atan_table(count), 1, -30);
+					WHEN '1' => 
+						X <= resize(X + y_shifted, 1, -30);
+						Y <= resize(Y - x_shifted, 1, -30);
+						Z <= resize(Z + atan_table(count), 1, -30);
+					WHEN OTHERS => NULL;
+				END CASE; --sign_z
+
+				-- Add one to count
+				count <= count + 1;
+
 			END IF; -- count
 
 		END IF; --started
