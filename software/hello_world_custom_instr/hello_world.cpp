@@ -6,6 +6,8 @@
  *
  */
 
+#define FP_MULT(n,A,B) __builtin_custom_fnff((n&0b11),(A),(B))
+
 #include <ctime>
 #include <iostream>
 #include <cmath>
@@ -88,14 +90,14 @@ float sumVector(float x[], int M)
 	for (i=1; i<M+1; i++)
 	{
 		current = x[i];
-		halfx = ALT_CI_FP_MULT_0(0b11, current, 2.0); // x/2
-		quarterx = ALT_CI_FP_MULT_0(0b11, current, 4.0); // x/4
-		qx_offset = ALT_CI_FP_MULT_0(0b01, floor(quarterx), 32.0); // floor(x/4) - 32
+		halfx = FP_MULT(0b11, current, 2.0); // x/2
+		quarterx = FP_MULT(0b11, current, 4.0); // x/4
+		qx_offset = FP_MULT(0b01, floor(quarterx), 32.0); // floor(x/4) - 32
 		cos_out = cos(qx_offset); // cos(floor(x/4) - 32)
-		x2 = ALT_CI_FP_MULT_0(0b10, current, current);
-		rightsum = ALT_CI_FP_MULT_0(0b10, x2, cos_out);// x^2 * cos(floor(x/4) - 32)
-		sum = ALT_CI_FP_MULT_0(0b00, rightsum, halfx); // 0.5*x + x^2 * cos(floor(x/4) - 32)
-		y =  ALT_CI_FP_MULT_0(0b00, y, sum); // Sum over vector
+		x2 = FP_MULT(0b10, current, current);
+		rightsum = FP_MULT(0b10, x2, cos_out);// x^2 * cos(floor(x/4) - 32)
+		sum = FP_MULT(0b00, rightsum, halfx); // 0.5*x + x^2 * cos(floor(x/4) - 32)
+		y =  FP_MULT(0b00, y, sum); // Sum over vector
 	}
 	return y;
 }
