@@ -154,11 +154,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity cordic_tester
 -- Compiling architecture behavioral of cordic_tester
 
-} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Compiling package fixed_float_types
-
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -178,6 +173,11 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 
 ** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl(6888): (vcom-1246) Range 2 to 1 is null.
 
+
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_float_types_c.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling package fixed_float_types
 
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -200,31 +200,15 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package fixed_pkg
 -- Compiling package atan_pkg
 
-} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd
+} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling package fp_mult_data_pak
-
-} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd {2 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package fixed_float_types
--- Loading package fixed_pkg
--- Loading package float_pkg
--- Loading entity fp_mult
--- Loading package fp_mult_data_pak
--- Compiling entity fp_mult_tb
--- Compiling architecture tb of fp_mult_tb
-** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(70): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
-
-** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(71): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
-
-** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(72): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+-- Compiling package std_logic_1164_additions
+-- Compiling package body std_logic_1164_additions
+-- Loading package std_logic_1164_additions
+** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl(1082): (vcom-1246) Range 2 to 1 is null.
 
 
 } {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl
@@ -243,17 +227,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(1022): (vcom-1246) Range 0 downto 1 is null.
 
 ** Warning: [3] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(6187): (vcom-1246) Range 2 to 1 is null.
-
-
-} {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling package std_logic_1164_additions
--- Compiling package body std_logic_1164_additions
--- Loading package std_logic_1164_additions
-** Warning: [3] D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl(1082): (vcom-1246) Range 2 to 1 is null.
 
 
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_float_synth.vhdl {1 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/test_float_synth.vhdl

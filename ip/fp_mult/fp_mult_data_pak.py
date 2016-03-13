@@ -32,21 +32,36 @@ def bitsToFloat(b):
 
 def recordToString(rec):
 	""" Given a tuple of opcode and three floats, formats in the form required by VHDL """
-	return "(X\"{}\", X\"{}\")".format(floatToBits(rec[0]), floatToBits(rec[1]))
+	return "(X\"{}\", X\"{}\", X\"{}\")".format(floatToBits(rec[0]), floatToBits(rec[1]), floatToBits(rec[2]))
 
-def createRecord(x):
-	""" Takes float, x; connverts to numpy float32 to ensure matching precision;
+def createRecord(x, y):
+	""" Takes two floats, x and y; converts both to numpy float32 to ensure matching precision;
 	Calculates results for inner function; Result is returned as a tuple of arguments"""
 	x32 = np.float32(x)
-	expression_result = 0.5*x + (x**2) * cos(floor(x/4) - 32.0)
+	y32 = np.float32(y)
+	expression_result = y + 0.5*x + (x**2) * cos(floor(x/4) - 32.0)
 
-	return (x, float(expression_result))
+	return (x, y, float(expression_result))
+
+def testCaseOne():
+	""" Takes no inputs, because the output is constant. Calculates the result of sumVector on
+	Test Case 1, a 52-data point vector with step size 5, and returns the results as a list 
+	of test cases. """
+	y = 0
+	cases = []
+	for i in np.arange(0, 52*5, 5):
+		cases += [createRecord(i, y)]
+		y += 0.5*i + (i**2) * cos(floor(i/4) - 32.0)
+	return cases
 
 # Check if function is main
 if __name__ == '__main__':
 
 	# Create test data points over the set 0:0.1:256
-	test_data = [createRecord(i) for i in np.arange(0, 256, 0.1)]
+	test_data = [createRecord(i, 0) for i in np.arange(0, 256, 0.1)]
+
+	# Add test data for Test Case 1 simulation
+	test_data += testCaseOne()
 
 	print("Data collected successfully")
 	# Print array of data to file

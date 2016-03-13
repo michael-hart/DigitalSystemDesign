@@ -12,12 +12,12 @@ ENTITY fp_mult_tb IS
 END ENTITY fp_mult_tb;
 
 ARCHITECTURE tb OF fp_mult_tb IS
-	SIGNAL a, expected, actual : std_logic_vector(31 DOWNTO 0);
+	SIGNAL a, b, expected, actual : std_logic_vector(31 DOWNTO 0);
 	SIGNAL clk : std_logic := '0';
 	SIGNAL reset : std_logic := '1';
 	SIGNAL start : std_logic := '0';
 	SIGNAL done : std_logic;
-	
+
 BEGIN
 
 	C1: PROCESS IS
@@ -28,23 +28,28 @@ BEGIN
 		WAIT FOR 35 ns;
 	END PROCESS C1;
 	
-	E1 : ENTITY fp_mult PORT MAP(clk => clk, reset => reset, start => start, data => a, result=>actual, done => done);
+	E1 : ENTITY fp_mult PORT MAP(clk => clk, reset => reset, start => start, dataa => a, datab => b, result=>actual, done => done);
 	
 	P1 : PROCESS IS
 		VARIABLE rec : data_t_rec;
 		VARIABLE act, exp, btm_lim, top_lim : float32;
 		VARIABLE start_time : time ;
+		VARIABLE current_error, max_error : float32;
 	BEGIN
 		-- Reset hardware to have values
 		reset <= '1';
 		WAIT UNTIL rising_edge(clk);
 		reset <= '0';
+
+		-- Set max error to 0
+		max_error := to_float(0);
 		
 		-- Test vector without attempted pipelining
 		FOR i IN data'RANGE LOOP
 			start_time := now;
 			rec := data(i);
-			a <= rec.data;
+			a <= rec.dataa;
+			b <= rec.datab;
 			expected <= rec.result;
 			-- Start calculation
 			start <= '1';
@@ -78,9 +83,17 @@ BEGIN
 			ELSE
 				REPORT "CYCLE " & integer'image(i) & " EXPECTED " & integer'image(to_integer(signed(expected))) & " AND RECEIVED " & integer'image(to_integer(signed(actual))) & " *** PASS ***";
 				REPORT "Time taken for calculation is " & time'image(now - start_time);
+
+				-- Calculate error and track max error
+				current_error := 100 * abs(act - exp)/abs(exp);
+				IF current_error > max_error THEN
+					max_error := current_error;
+				END IF;
+
 			END IF; -- limit check
 		END LOOP;
 		
+		REPORT "MAXIMUM ERROR WAS " & integer'image(to_integer(signed(to_slv(max_error)))) & "%";
 		REPORT "ALL TESTS FINISHED CORRECTLY" SEVERITY FAILURE;
 		
 	END PROCESS P1;
