@@ -13,10 +13,10 @@ def getAn():
 def getGainBits():
 	An = getAn()
 	print (1.0/An)
-	x = (1.0/An) * 2**30
+	x = (1.0/An) * 2**22
 	print hex(int(x))
 	h = hex(int(x))[2:]
-	end = "0" * (8 - len(h))
+	end = "0" * (6 - len(h))
 	return h + end
 
 print getAn()

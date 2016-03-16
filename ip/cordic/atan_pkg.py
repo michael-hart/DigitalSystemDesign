@@ -6,11 +6,11 @@ def fixedToBits(x):
 	string for output """
 
 	# Check for negative input
-	y = int(x * 2**30)
+	y = int(x * 2**22)
 
 	# Convert to hex string and fill to 8 places
 	h = hex(y)[2:]
-	return h.zfill(8).upper()
+	return h.zfill(6).upper()
 
 def recordToString(rec):
 	""" Given a tuple of opcode and three floats, formats in the form required by VHDL """

@@ -154,6 +154,20 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity cordic_tester
 -- Compiling architecture behavioral of cordic_tester
 
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Compiling entity fp_mult
+-- Compiling architecture arch of fp_mult
+-- Loading package atan_pkg
+-- Loading entity cordic
+
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/fixed_pkg_c.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -179,6 +193,22 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Compiling package fixed_float_types
 
+} {} {}} D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd {2 {vcom -work cordic -2002 -explicit D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package atan_pkg
+-- Compiling entity cordic
+-- Compiling architecture synth of cordic
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd(57): (vcom-1167) Index value -22 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd(58): (vcom-1167) Index value -22 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
+
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/standard_textio_additions_c.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -199,6 +229,33 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package fixed_float_types
 -- Loading package fixed_pkg
 -- Compiling package atan_pkg
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd {1 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_data_pak.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package fp_mult_data_pak
+
+} {} {}} D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd {2 {vcom -work work -2002 -explicit D:/DSD/DigitalSystemDesign/ip/fp_mult/fp_mult_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package fixed_float_types
+-- Loading package fixed_pkg
+-- Loading package float_pkg
+-- Loading entity fp_mult
+-- Loading package fp_mult_data_pak
+-- Compiling entity fp_mult_tb
+-- Compiling architecture tb of fp_mult_tb
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(75): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(76): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
+** Warning: [14] D:/DSD/DigitalSystemDesign/ip/fp_mult/float_pkg_c.vhdl(77): (vcom-1167) Index value -23 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+
 
 } {} {}} D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl {2 {vcom -work ieee_proposed -2002 -explicit D:/DSD/DigitalSystemDesign/fp_mult/downloaded/std_logic_1164_additions.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

@@ -19,7 +19,7 @@ END ENTITY fp_mult;
 ARCHITECTURE arch OF fp_mult IS
 	SIGNAL cos_start, cos_done, done_i : std_logic;
 	SIGNAL result_i : std_logic_vector(31 DOWNTO 0);
-	SIGNAL cos_argument, cos_out : sfixed(1 DOWNTO -30);
+	SIGNAL cos_argument, cos_out : sfixed(1 DOWNTO -22);
 	CONSTANT floor_divide : float32 := to_float(4.0);
 
 	CONSTANT cos_subtract : std_logic_vector(7 DOWNTO 0) := X"20";
@@ -70,6 +70,7 @@ BEGIN
 		IF start = '1' AND fp_fsm = IDLE THEN
 	    	-- Convert x and define some float operations
 			x := to_float(dataa, x);
+			x2 := x * x;
 			
 			-- Floor and divide operation
 			usigned_x := to_ufixed(x, usigned_x);
@@ -113,7 +114,7 @@ BEGIN
 				
 			-- Must convert to fixed point for use in CORDIC
 			--cos_arg_rads_fixed := sfixed(cos_arg_rads(1 DOWNTO -30));
-		  	cos_argument <= sfixed(cos_arg_rads(1 DOWNTO -30));
+		  	cos_argument <= sfixed(cos_arg_rads(1 DOWNTO -22));
 		  	cos_start <= '1';
 
 		  	fp_fsm <= COSINE;
@@ -130,7 +131,6 @@ BEGIN
 			fp_fsm <= SUMSTART;
 		ELSIF fp_fsm = SUMSTART THEN
 			halfx := x / 2;
-			x2 := x * x;
 			rightsum := x2 * cos_out_float;
 			fp_fsm <= SUMDONE;
 		ELSIF fp_fsm = SUMDONE THEN

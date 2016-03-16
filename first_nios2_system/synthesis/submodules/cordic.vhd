@@ -12,16 +12,16 @@ ENTITY cordic IS
 	PORT(
 		clk, start, reset : std_logic;
 		done : OUT std_logic;
-		angle : IN sfixed(1 DOWNTO -30);
-		cos : OUT sfixed(1 DOWNTO -30)
+		angle : IN sfixed(1 DOWNTO -22);
+		cos : OUT sfixed(1 DOWNTO -22)
 	);
 END ENTITY cordic;
 
 ARCHITECTURE synth OF cordic IS
 	SIGNAL done_i : std_logic;
-	SIGNAL cos_i : sfixed(1 DOWNTO -30);
-	CONSTANT INIT_X : sfixed(1 DOWNTO -30) := X"26dd3b6a"; -- see useful.py
-	SIGNAL X, Y, Z : sfixed(1 DOWNTO -30);
+	SIGNAL cos_i : sfixed(1 DOWNTO -22);
+	CONSTANT INIT_X : sfixed(1 DOWNTO -22) := X"26dd3b"; -- see useful.py
+	SIGNAL X, Y, Z : sfixed(1 DOWNTO -22);
 	SIGNAL count : INTEGER;
 	SIGNAL started : std_logic;
 BEGIN
@@ -31,7 +31,7 @@ BEGIN
 	cos <= cos_i;
 
 	P1 : PROCESS IS
-		VARIABLE x_shifted, y_shifted : sfixed(1 DOWNTO -30);
+		VARIABLE x_shifted, y_shifted : sfixed(1 DOWNTO -22);
 	BEGIN
 		WAIT UNTIL rising_edge(clk);
 
@@ -49,7 +49,7 @@ BEGIN
 
 		IF started = '1' THEN 
 			
-			IF count = 32 THEN
+			IF count = 24 THEN
 				done_i <= '1';
 				cos_i <= X;
 				started <= '0';
@@ -58,13 +58,13 @@ BEGIN
 				y_shifted := sfixed(SHIFT_RIGHT(signed(Y), count));
 				CASE Z(1) IS
 					WHEN '0' => 
-						X <= resize(X - y_shifted, 1, -30);
-						Y <= resize(Y + x_shifted, 1, -30);
-						Z <= resize(Z - atan_table(count), 1, -30);
+						X <= resize(X - y_shifted, 1, -22);
+						Y <= resize(Y + x_shifted, 1, -22);
+						Z <= resize(Z - atan_table(count), 1, -22);
 					WHEN '1' => 
-						X <= resize(X + y_shifted, 1, -30);
-						Y <= resize(Y - x_shifted, 1, -30);
-						Z <= resize(Z + atan_table(count), 1, -30);
+						X <= resize(X + y_shifted, 1, -22);
+						Y <= resize(Y - x_shifted, 1, -22);
+						Z <= resize(Z + atan_table(count), 1, -22);
 					WHEN OTHERS => NULL;
 				END CASE; --sign_z
 

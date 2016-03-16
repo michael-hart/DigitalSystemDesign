@@ -1,0 +1,92 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\DSD\DigitalSystemDesign\ip\cordic
+Patan_pkg
+Z1 DPx13 ieee_proposed 17 fixed_float_types 0 22 iVh63YdNZa2_CQb_R2=4S2
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx13 ieee_proposed 9 fixed_pkg 0 22 j9Xni18icP;3zS7Yicg^m1
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+w1458167704
+Z6 dD:\DSD\DigitalSystemDesign\ip\cordic
+8D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd
+FD:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd
+l0
+L7
+V]VWB5>]^M8S6b^NKDLd_=2
+Z7 OV;C;10.1d;51
+32
+Z8 o-work cordic -2002 -explicit -O0
+Z9 tExplicit 1
+!s100 aE`4fMPR`jZC:i[=@[M=R0
+!i10b 1
+!s108 1458167829.504000
+!s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd|
+!s107 D:/DSD/DigitalSystemDesign/ip/cordic/atan_pkg.vhd|
+Ecordic
+Z10 w1458167323
+Z11 DPx6 cordic 8 atan_pkg 0 22 ]VWB5>]^M8S6b^NKDLd_=2
+R1
+R3
+R2
+R4
+R5
+R6
+Z12 8D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+Z13 FD:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd
+l0
+L11
+VoA8J0;>eH:6PMPn`jiQGJ1
+R7
+32
+Z14 !s108 1458167829.681000
+Z15 !s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd|
+Z16 !s107 D:/DSD/DigitalSystemDesign/ip/cordic/cordic.vhd|
+R8
+R9
+!s100 7EbAUKFBLgoSUc09E2QcY2
+!i10b 1
+Asynth
+R11
+R1
+R3
+R2
+R4
+R5
+DEx4 work 6 cordic 0 22 oA8J0;>eH:6PMPn`jiQGJ1
+l27
+L20
+Vj7?gYOOe`=5P`ljfDWSmo2
+!s100 GYWHh3GZX0:P8L66S]:=52
+R7
+32
+R14
+R15
+R16
+R8
+R9
+!i10b 1
+Pcos_data_pak
+R1
+R2
+R3
+R4
+R5
+w1458167870
+R6
+8D:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd
+FD:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd
+l0
+L7
+VXhMb3cTm^k>zVSO<FJ[Xk0
+!s100 1l3EWz>]6UhO_;PLLQ61T1
+R7
+32
+!i10b 1
+!s108 1458167874.014000
+!s90 -reportprogress|300|-work|cordic|-2002|-explicit|D:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd|
+!s107 D:/DSD/DigitalSystemDesign/ip/cordic/cos_data_pak.vhd|
+R8
+R9

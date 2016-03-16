@@ -1,18 +1,20 @@
 
 LIBRARY IEEE;
 LIBRARY IEEE_proposed;
+LIBRARY CORDIC;
 
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 USE IEEE_proposed.float_pkg.ALL;
-USE WORK.cordic;
-USE WORK.cos_data_pak.ALL;
+USE IEEE_proposed.fixed_pkg.ALL;
+USE CORDIC.cordic;
+USE CORDIC.cos_data_pak.ALL;
 
 ENTITY cordic_tb IS
 END ENTITY cordic_tb;
 
 ARCHITECTURE tb OF cordic_tb IS
-	SIGNAL a, expected, actual : std_logic_vector(31 DOWNTO 0);
+	SIGNAL a, expected, actual : sfixed(1 DOWNTO -22);
 	SIGNAL clk : std_logic := '0';
 	SIGNAL reset : std_logic := '1';
 	SIGNAL start : std_logic := '0';
@@ -28,7 +30,7 @@ BEGIN
 		WAIT FOR 35 ns;
 	END PROCESS C1;
 	
-	E1 : ENTITY cordic PORT MAP(clk => clk, reset => reset, start => start, angle => a, cos=>actual, done => done);
+	E1 : ENTITY CORDIC.cordic PORT MAP(clk => clk, reset => reset, start => start, angle => a, cos=>actual, done => done);
 	
 	P1 : PROCESS IS
 		VARIABLE rec : data_t_rec;
@@ -57,8 +59,8 @@ BEGIN
 			-- Calculate some boundaries for output, as it is not perfect
 			act := to_float(unsigned(actual));
 			exp := to_float(unsigned(expected));
-			btm_lim := exp * 0.9999;
-			top_lim := exp * 1.0001;
+			btm_lim := exp * 0.9998;
+			top_lim := exp * 1.0002;
 			
 			-- Check output
 			IF act > btm_lim AND act < top_lim THEN
